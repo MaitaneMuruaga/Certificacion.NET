@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso del bloque if</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Algunas veces vas a desear revisar si se cumple más de una condición...
+		let rol = prompt('Introduce tu rol');
+		rol = rol.toUpperCase();
+
+		if (rol === 'ADMIN') {
+			console.log('El Usuario puede editar, eliminar y ver toda la información');
+		} else if (rol === 'EDITOR') {
+			console.log('El usuario solo puede editar sus registros');
+		} else if (rol === 'USUARIO') {
+			console.log('El Usuario es visitante, solo puede ver la información');
+		} else {
+			console.log('Rol incorrecto');
+		}
+	</script>
+</body>
+
+</html>

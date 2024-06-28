@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de objetos</title>
+	<meta charset="UTF-8" />
+	<script>
+		const producto = {
+			nombre: 'Monitor 20 pulgadas',
+			precio: 30,
+			disponible: true
+		}
+
+		// Cuando creamos una copia de un objeto, se trabaja con el mismo objeto en memoria referenciado desde dos sitios
+		// En la siguiente línea asignamos a productoCopia una copia de producto.
+		const productoCopia = producto;
+		// Ahora cambiamos el precio a producto
+		producto.precio = 50;
+
+		// Observamos que tanto el original como la copia tienen el mismo precio
+		console.log(producto);
+		console.log(productoCopia);
+
+		// Podemos clonar un objeto, haciendo que original y copia tengan lugares en memoria diferentes.
+		// Una forma de hacerlo que es con el Spread Operator o Rest Operator.
+		const productoCopia2 = { ...producto };
+
+		// Ahora, si al producto original le cambio el precio, este no afecta a productoCopia2 
+		producto.precio = 1000;
+		console.log('producto original', producto);
+		console.log('productoCopia2', productoCopia2);
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

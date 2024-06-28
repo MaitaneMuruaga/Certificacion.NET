@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de for in</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// El bloque for in va a iterar sobre todas las propiedades de un objeto
+		let coche = {
+			modelo: 'Corsa',
+			motor: 'Diésel',
+			marca: 'Opel'
+		}
+
+		// // propiedad es un alias. Podemos poner cualquier cosa y representa a cada propiedad del objeto
+		for (let propiedad in coche) {
+			//	console.log(propiedad); // Nos devuelve el nombre de la propiedad
+			//	console.log(coche[propiedad]); // Nos el valor de la propiedad
+		}
+
+		const carrito = [
+			{ nombre: 'Monitor 20 Pulgadas', precio: 500, oferta: true },
+			{ nombre: 'Televisión 50 Pulgadas', precio: 700, descatalogado: false },
+			{ nombre: 'Tablet', precio: 300, descatalogado: false },
+			{ nombre: 'Auriculares', precio: 200, descuento: 10 },
+			{ nombre: 'Teclado', precio: 50 }
+		];
+
+        // for of recorre un array
+        for (const producto of carrito) {
+			// for in recorre las propiedades de un objeto
+			for (let propiedad in producto) {
+				console.log(propiedad); // Nos devuelve el nombre de la propiedad
+				console.log(producto[propiedad]); // Nos el valor de la propiedad
+                if (propiedad==='oferta' && producto[propiedad]===true){
+                    producto.precio/=2;
+                }
+			}
+		}
+        console.log(carrito);
+
+	</script>
+</body>
+
+</html>

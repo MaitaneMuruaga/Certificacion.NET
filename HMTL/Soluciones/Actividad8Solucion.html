@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Producto Bea</title>
+</head>
+
+<body>
+    <h1>Nuevo Producto</h1>
+
+    <form>
+        <label for="nombre">Nombre de producto:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" min="0" max="100" step="0.01" value="0" required><br><br>
+           
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="">Seleccione una categoría</option>
+            <option value="electronicos">Tecnologías</option>
+            <option value="ropa">Material</option>
+            <option value="comida">Componente</option>
+        </select><br><br>
+        <input type="checkbox" id="acuerdo" value="Catalogo">
+        <label for="acuerdo">Descatalogado</label><br>
+
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+</body>
+
+</html>
+    

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso accesibilidad</title>
+</head>
+
+<body>
+    <h1>Repaso general accesibilidad básica</h1>
+    <p>Un título principal siempre debe ser un h1</p>
+    <h2>Otros aspectos a tener en cuenta</h2>
+    <ul>
+        <li>El título es importante y debe diferenciar a una web del resto, sobre todo si desarrollamos un sitio web con
+            varias páginas. Por ejemplo, colocando primero el título de la página y a continuación el nombre del sitio
+            al que pertenece
+        </li>
+        <li>Un enlace debe ser un elemento a con un atributo href. Nunca, por ejemplo, simularemos un enlace con un
+            párrafo y estilos y programar su direccionamiento mediante JavaScript. Si el enlace no da información
+            suficiente en su texto, debemos incluir un aria-label
+        </li>
+        <li>Una imagen debe tener un atributo alt que la describa</li>
+        <li>Para introducir una tabla, podemos encabezarla con una etiqueta caption o un atributo aria-label</li>
+        <li>Los elementos dispuestos en un formulario deben ser etiquetados con label. El atributo for del label deberá
+            ir vinculado al atributo id del input correspondiente</li>
+        <li>Los input radio mejoran su accesibilidad con los elementos fieldset y legend</li>
+        <li>El idioma debe configurarse en la etiqueta html de la página</li>
+    </ul>
+</body>
+
+</html>

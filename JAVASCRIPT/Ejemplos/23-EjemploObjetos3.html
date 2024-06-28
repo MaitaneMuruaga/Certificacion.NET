@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de objetos</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		const producto = {
+			nombre: 'Monitor 20 pulgadas',
+			precio: 30,
+			disponible: true,
+			familia: 'Tecnología'
+		}
+
+		// Aquí pasamos el nombre a otra variable
+		const nombre = producto.nombre;
+
+		// En JavaScript moderno, también podemos usar algo llamado desestructuración
+		// Desestructuración significa sacar de una esctructura
+		const { precio } = producto;
+
+		console.log(nombre);
+		console.log(precio);
+
+		// O puedes hacerlo mejor con desestructuración
+		const { disponible, familia } = producto;
+
+        // Sin desestructuración
+        const disponible2 = producto.disponible;
+        const familia2 = producto.familia;
+	</script>
+</body>
+
+</html>

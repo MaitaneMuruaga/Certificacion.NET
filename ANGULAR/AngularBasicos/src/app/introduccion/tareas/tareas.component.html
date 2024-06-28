@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Mis tareas</h1>
+    <hr />
+    <div class="row">
+      <div class="col-4">
+        <h2>Nueva tarea</h2>
+        <div class="form-group">
+          <label for="descipcion">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" [(ngModel)]="descripcion"
+            placeholder="Introduce tarea">
+        </div>
+        <div class="form-group">
+          <label for="realizada">Realizada</label>
+          <input type="text" class="form-control" id="realizada" [(ngModel)]="realizada"
+            placeholder="Introduce si o no">
+        </div>
+        <button type="button" class="btn btn-success mt-4" (click)="agregarTarea()">Agregar tarea</button>
+      </div>
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Descripción</th>
+              <th scope="col">Realizada</th>
+              <th colspan="2">Estado tarea</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tarea of misTareas; let i=index;">
+              <th scope="row">{{tarea.descripcion}}</th>
+              <!-- <td *ngIf="tarea.realizada">Sí</td>
+              <td *ngIf="!tarea.realizada">No</td> -->
+              <td>{{tarea.realizada ? 'Sí':'No'}}</td>
+              <td><button type="button" class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar tarea</button></td>
+              <td><button type="button" class="btn btn-warning" (click)="cambiarEstadoTarea(i)">Cambiar estado tarea</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  

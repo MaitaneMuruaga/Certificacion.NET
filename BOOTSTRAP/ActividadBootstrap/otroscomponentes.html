@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Otros componentes</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="icon" type="image/x-icon" href="./img/bootstrap-logo.png"/>
+    <link rel="stylesheet" src="text/css" href="./styles/otroscomponentes.css"/>
+
+  </head>
+
+    <body>
+      <!-- Barra de navegación -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./img/bootstrap-logo.png" alt="Logo de Bootstrap" width="50" height="50">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./tablasyformularios.html">Tablas y formularios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./otroscomponentes.html">Otros componentes</a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- -- Primer bloque -->
+      <div class="first-paragraph">
+        <h1 class="display-2">Otros componentes</h1>
+          <p>
+            En Bootstrap tenemos muchos componentes que nos van a permitir implementar diseños avanzados en nuestras webs. 
+          </p>
+          <hr>
+      </div>
+
+      <!-- Segundo bloque -->
+      <div class="second-paragraph">
+        <h1 class="display-2">Carousel</h1>
+        <p>
+          El carousel nos sirve para crear una galería de imágenes. 
+        </p>
+
+        <div class="button-second-paragraph">
+          <button type="button" class="btn btn-outline-primary">
+            <a href="https://getbootstrap.com/docs/5.3/components/carousel/">Documentación de carousel en Bootstrap</a>
+          </button>
+        </div>
+      
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/gatito.jpg" class="d-block w-100" alt="Imagen de un gatito">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/gatito2.jpg" class="d-block w-100" alt="Imagen de otro gatito">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/gatito3.jpg" class="d-block w-100" alt="Imagen de otro gatito">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/gatito4.jpg" class="d-block w-100" alt="Imagen de otro gatito">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sección del footer -->
+      <footer>
+        <p>
+          &copy;Maitane Muruaga, 2024
+        </p>
+      </footer>
+  
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de arrays</title>
+	<meta charset="UTF-8" />
+
+</head>
+
+<body>
+
+	<script>
+		const nombres = ['Pedro', 'Ana', 'Juan', 'Marta', 'Susana', 'Juan Luis'];
+		// push nos permite agregar elementos al array al final y unshift al principio
+		nombres.push('Raquel');
+		nombres.unshift('Manuel');
+		console.log(nombres);
+
+		// shift nos permite eliminar el primer elemento y pop el último
+		nombres.shift();
+		nombres.pop();
+		console.log(nombres);
+
+		// Ahora supongamos que deseas eliminar del centro...
+		// splice permite eliminar elementos a partir de una posición
+		// nombres.splice(1,0); Eliminaría, a partir de la posición 1, 0 elementos. Esta instrucción no haría nada
+		// nombres.splice(1,2); Eliminaría, a partir de la posición 1, 2 elementos. 
+		// nombres.splice(1); Si en el segundo argumento no ponemos nada, borra todos los elementos a partir de una posición
+		nombres.splice(1, 2);
+		console.log(nombres);
+
+		// Supongamos que creamos un carrito de compras.
+		const carrito = [];
+
+		// Añadir elementos al carrito...
+		const producto = {
+			nombre: 'Monitor 20 Pulgadas',
+			precio: 500
+		}
+
+		const producto2 = {
+			nombre: 'Impresora',
+			precio: 150
+		}
+
+		carrito.push(producto);
+		carrito.push(producto2);
+		// carrito.push(producto, producto2);
+
+		// Añadir al inicio del carrito...
+		const producto3 = {
+			nombre: 'Teclado',
+			precio: 50
+		}
+		carrito.unshift(producto3);
+
+		console.log(carrito);
+		console.table(carrito);
+	</script>
+</body>
+
+</html>

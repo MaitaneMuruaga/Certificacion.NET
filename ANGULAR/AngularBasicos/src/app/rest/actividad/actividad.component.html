@@ -1,0 +1,29 @@
+<form #formulario="ngForm" (submit)="getGif()">
+    <div class="form-group">
+      <div class="form-group">
+        <label for="gif">Gif</label>
+        <input type="text" class="form-control" id="continente" name="gif" [(ngModel)]="data"
+          required #gif="ngModel" />
+        <div *ngIf="gif.invalid && gif.touched" class="text-danger">
+          El continente es obligatorio
+        </div>
+      </div>
+    
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
+      Aceptar
+    </button>
+  </form>
+  <div class="row">
+    <div class="col" *ngFor="let gif of sticker">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" [src]="gif.data" [alt]="gif.data" />
+        <div class="card-body">
+          <h5 class="card-title">{{ gif.data }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+    No se ha podido acceder a los gifs
+  </div>

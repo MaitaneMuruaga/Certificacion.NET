@@ -1,0 +1,44 @@
+/* Cambios en el nav */
+.active{
+    font-weight: bold;
+}
+
+/* Cambios en h1 */
+.display-1{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Cabios en el primer párrafo */
+.first-paragraph{
+    padding: 10px 0 10px 10px;
+}
+
+/* Cambios en el h2 */
+.display-2{
+    font-size: 50px;
+}
+
+/* Cambios en la tabla */
+
+.row{
+    padding: 10px;
+    padding-top: -10px;
+    height: 200px;
+}
+
+.logo{
+    margin-top: -50px;
+}
+
+/* Cambos en el footer */
+footer{
+    padding-left: 10px;
+}
+

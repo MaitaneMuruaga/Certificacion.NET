@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    
+    <!-- Tenemos primero una simple estructura de HTML -->
+    <h1>Actividad 16 v2</h1>
+    <!-- Botón para acargar la API -->
+    <form>
+        <label for="tipo" class="sr-only my-2">Tipo de cóctel</label>
+        <input type="text" placeholder="Introduce tipo" name="tipo" id="tipo" required autofocus />
+        <button id="cargarAPI" type="submit">
+            Ver cócteles
+        </button>
+    </form>
+    <div id="contenido"></div>
+
+    <script>
+
+        const formulario = document.querySelector('form');
+        const inputTipo = document.querySelector('#tipo');
+        const obtenerDatosAPI = async (e) => {
+            e.preventDefault();
+            try {
+                const url='https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + inputTipo.value.trim();
+                const respuesta = await fetch(url);
+                const resultado = await respuesta.json();
+                console.log(resultado.drinks);
+                mostrarHTMLAPI(resultado.drinks);
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        const mostrarHTMLAPI = (datos) => {
+            const contenido = document.querySelector('#contenido')
+            if (datos===null){
+                contenido.innerHTML='No hay cócteles de ' + inputTipo.value.trim() ;
+            }
+            let html = '';
+            datos.forEach(bebida => {
+                const { strDrink, strInstructions, strDrinkThumb } = bebida;
+                html += `
+                    <p>Bebida: ${strDrink} </p>
+                    <p>Preparación: ${strInstructions} </p>
+                    <img src="${strDrinkThumb}" alt="bebida"> 
+                `
+            });
+            contenido.innerHTML = html;
+        
+        }
+
+        formulario.addEventListener('submit', obtenerDatosAPI);
+
+    </script>
+
+</body>
+
+</html>

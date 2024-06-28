@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 12</title>
+</head>
+<body> 
+    <script>
+        // Parte 1
+        const grupo = new Array (
+            {nombre: 'Eduardo', localidad: 'Gipuzkoa', sueldo: 30},
+            {nombre: 'Felipe', localidad: 'Alava', sueldo: 50},
+            {nombre: 'Rodolfo', localidad: 'Alava', sueldo: 20},
+            {nombre: 'Maria', localidad: 'Gipuzkoa', sueldo: 60},
+            {nombre: 'Andrea', localidad: 'Bizkaia', sueldo: 70}
+        )
+
+        const grupoRetencion = grupo.map(x => ({
+            nombre: x.nombre, sueldo: x.sueldo, retencion: x.sueldo * .15
+        }))
+
+        // Parte 2
+
+        // Devolver la posición que ocupa una persona con un nombre determinado.
+        const posicion = grupo.findIndex(x => x.nombre === 'Maria');
+        console.log(posicion);
+        // Saber si existe alguna persona con el sueldo mayor que 3500.
+        const sueldoGrupo = grupo.some(x => x.sueldo > 3500);
+        console.log(sueldoGrupo);
+        // Filtrar todas las personas de una determinada localidad.
+        const localidadGrupo = grupo.filter(x => x.localidad === 'Gipuzkoa'); 
+        console.log(localidadGrupo);
+        // Filtrar todas las personas de una determinada localidad con un sueldo mayor que 2000.
+        const localidadSueldoGrupo = grupo.filter(x => x.localidad === 'Gipuzkoa' && x.sueldo > 2000);
+        console.log(sueldoGrupo);
+        // Encontrar la primera persona de una determinada localidad.
+        const resultadoLocalidadGrupo = grupo.find(x => x.localidad === 'Alava');
+        console.log(resultadoLocalidadGrupo);
+    </script>
+</body>
+</html>

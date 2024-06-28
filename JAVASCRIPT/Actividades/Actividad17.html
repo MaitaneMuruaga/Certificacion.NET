@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 17</title>
+
+    </head>
+
+    <body>
+    
+        <!-- Tenemos primero una simple estructura de HTML -->
+        <h1>Actividad 16 v2</h1>
+        <!-- Botón para acargar la API -->
+        <form>
+            <label for="tipo" class="sr-only my-2">Tipos de platos</label>
+            <input type="text" placeholder="Introduce tipo" name="tipo" id="tipo" required autofocus />
+            <button id="cargarAPI" type="submit">
+                Ver platos
+            </button>
+        </form>
+        <div id="contenido"></div>
+
+        <script>
+
+            const formulario = document.querySelector('form');
+            const inputTipo = document.querySelector('#tipo');
+            const obtenerDatosAPI = async (e) => {
+                e.preventDefault();
+                try {
+                    const url='https://www.themealdb.com/api/json/v1/1/filter.php?a=' + inputTipo.value.trim();
+                    const respuesta = await fetch(url);
+                    const resultado = await respuesta.json();
+                    console.log(resultado.meals);
+                    mostrarHTMLAPI(resultado.meals);
+                }
+                catch (error) {
+                    console.log(error)
+                }
+            }
+
+            const mostrarHTMLAPI = (datos) => {
+                const contenido = document.querySelector('#contenido')
+                if (datos===null){
+                    contenido.innerHTML='No hay comida de ' + inputTipo.value.trim();
+                }
+                let html = '';
+                datos.forEach(comida => {
+                    const { strMeal, strMealThumb } = comida;
+                    html += `
+                        <p>Comida: ${strMeal} </p>
+                        <img src="${strMealThumb}" alt="comida"> 
+                    `
+                });
+                contenido.innerHTML = html;
+            }
+
+            formulario.addEventListener('click', obtenerDatosAPI);
+
+        </script>
+
+    </body>
+
+</html>

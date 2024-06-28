@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de Math</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<script>
+		// Math es parte global de JavaScript, tiene una serie de operaciones que pueden ser muy útiles.
+		let resultado;
+		let importe = 1348.53;
+		let neto = importe + (importe * 0.21);
+		console.log('Neto sin redondeo alguno', neto);
+
+		// Pi
+		resultado = Math.PI;
+		console.log(resultado);
+
+		// redondeo
+		resultado = Math.round(neto)
+		console.log('Neto con round', resultado);
+
+		// redondeo arriba o abajo (ceil o floor)
+		resultado = Math.ceil(neto);
+		console.log('Neto con ceil', resultado);
+		resultado = Math.floor(neto);
+		console.log('Neto con floor', resultado);
+
+		// Raiz cuadrada
+		resultado = Math.sqrt(144);
+		// Abssoluto
+		resultado = Math.abs(-300);
+		// Potencia
+		resultado = Math.pow(8, 3);
+		// Minimo
+		resultado = Math.min(3, 5, 1, 2, 9, 4, 2, -3);
+		// Max
+		resultado = Math.max(4, 1, 21, 4, 15, 5, 11, 5);
+		// Aleatorio
+		let aleatorio = Math.random();
+		// Random devuelve un número aleatorio entre 0 y 1 que podrá ser 0 pero nunca 1
+		console.log('Número aleatorio entre 0 y 1', aleatorio);
+		// Aleatorio dentro de un rango. 
+		// Simulamos un dado. Debemos redondear el número aleatorio multiplicándolo por el límite máximo y sumarle 1
+		let dado = Math.floor(Math.random() * 6) + 1;
+
+		console.log('Dado:', dado);
+	</script>
+</body>
+
+</html>

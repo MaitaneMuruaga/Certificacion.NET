@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tablas y formularios</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+        <link rel="icon" type="image/x-icon" href="./img/bootstrap-logo.png"/>
+        <link rel="stylesheet" src="text/css" href="./styles/tablasyformularios.css"/>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./img/bootstrap-logo.png" alt="Logo de Bootstrap" width="50" height="50">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+          
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./tablasyformularios.html">Tablas y formularios</a>
+                        </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="./otroscomponentes.html">Otros componentes</a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h1 class="display-2"> Formularios con Bootstrap</h1>
+                    <button type="button" class="btn btn-outline-primary">
+                        <a href="https://getbootstrap.com/docs/5.3/forms/overview/">Documentación de formularios con Bootstrap</a>
+                    </button>
+                    <hr>
+                    <div>
+                        <p>
+                            Los controles de formulario de Bootstrap amplian nuestros estilos de formulario reiniciados con clases. Usa estas clases para optar por sus pantallas personalizadas para una representación más consistente en todos los navegadores y dispositivos. Aquí vemos un ejemplo de un formulario hecho con Bootstrap. 
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label">Forma de pago</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Elige una forma de pago</option>
+                            <option value="1">Tarjeta</option>
+                            <option value="2">PayPal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Estoy de acuerdo en las condiciones
+                        </label>
+                    </div>
+
+                    <div class="button">
+                        <button type="button" class="btn btn-success">
+                        Enviar
+                        </button>   
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <h1 class="display-2">
+                        Tablas con Bootstrap
+                    </h1>
+                    <button type="button" class="btn btn-outline-primary">
+                        <a href="https://getbootstrap.com/docs/5.3/content/tables/">Documentación de tablas con Bootstrap</a>
+                    </button>
+                    <hr>
+                    <div>
+                        <p>
+                            Solo tenemos que añadir la clase <code>.table-responsive</code> a una tabla para hacer que sea responsive. Con la clase <code>.table</code>, le damos el estilo básico de Bootstrap a la tabla.
+                        </p>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Ciudad</th>
+
+                            </tr>
+                        </thead>
+                        
+                       
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Juan</td>
+                                <td>Pérez</td>
+                                <td>Pamplona</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Ana</td>
+                                <td>Sánchez</td>
+                                <td>Vitoria</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Marta</td>
+                                <td>Gómez</td>
+                                <td>Logroño</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                &copy;Maitane Muruaga, 2024
+            </p>
+        </footer>
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

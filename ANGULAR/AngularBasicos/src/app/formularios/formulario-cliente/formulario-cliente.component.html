@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>Agregar cliente</h1>
+  <form #formulario="ngForm">
+    <div class="form-group">
+      <label>Nombre (obligatorio)</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre" required #nombre="ngModel" 
+        placeholder="Nombre es obligatorio"/>
+      <span class="form-text text-danger" *ngIf="!nombre.valid && nombre.touched">
+        Nombre obligatorio
+      </span>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Categoría</label>
+      <select multiple name="categoria" class="form-control" [(ngModel)]="cliente.categoria">
+        <option *ngFor="let category of categoria" [value]="category.value">{{ category.display }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="cliente.email" required id="email"/>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Facturación anual</label>
+      <input type="number" class="form-control" name="facturacion" [(ngModel)]="cliente.facturacionAnual" required min="0" #facturacion="ngModel"/>
+      <div *ngIf="!facturacion.valid && facturacion.touched">
+      <span class="form-text text-danger" *ngIf="facturacion.hasError('required')">
+        Facturación obligatoria
+      </span>
+      <span class="form-text text-danger" *ngIf="facturacion.hasError('min')">
+        Facturación mínima 0
+      </span>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Localidad</label>
+      <input type="text" class="form-control" name="localidad" [(ngModel)]="cliente.localidad" id="facturacion" required/>
+    </div>
+
+    <div class="form-group mt-2">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="moroso" [(ngModel)]="cliente.moroso"/>
+          Moroso
+        </label>
+      </div>
+    </div>
+  
+    <p *ngIf="formulario.invalid" class="text-danger">Formulario incompleto y/o con errores</p>
+    <p *ngIf="formulario.valid" class="text-success">Formulario correcto</p>
+    <button type="submit" (click)="guardar()" class="btn btn-primary" [disabled]="formulario.invalid">
+      Aceptar
+    </button>
+    <div class="alert alert-success" role="alert" *ngIf="formulario.submitted">
+      Datos enviados
+    </div>
+
+  <div class="my-2" style="border-radius: 5px; padding: 10px; border: 1px solid; background-color: lightgray">
+    <div>Detalles del formulario:</div>
+    <pre>¿Es válido?: <br>{{formulario.valid }}</pre>
+    <pre>¿Se ha aceptado?: <br>{{formulario.submitted }}</pre>
+    <pre>Valores introducidos: <br>{{formulario.value | json }}</pre>
+  </div>
+</div>

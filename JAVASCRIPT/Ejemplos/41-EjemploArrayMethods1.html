@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de array methods</title>
+	<meta charset="UTF-8" />
+
+</head>
+
+<body>
+	<script>
+		// Hemos visto algunos métodos para strings, para números y también para objetos.
+		// Veamos una serie de métodos muy útiles cuando se trabaja con arrays y algunos casos de uso.
+		// Estos métodos son los llamados array methods
+
+		const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
+
+		const carrito = [
+			{ nombre: 'Monitor 27 Pulgadas', precio: 500 },
+			{ nombre: 'Televisión', precio: 100 },
+			{ nombre: 'Tablet', precio: 200 },
+			{ nombre: 'Auriculares', precio: 300 },
+			{ nombre: 'Teclado', precio: 400 },
+			{ nombre: 'Teléfono móvil', precio: 700 }
+		];
+
+		let total = 0;
+		// Alternativas tradicionales-->bucles tradicionales
+		// for (let i = 0; i < carrito.length; i++) {
+		// 	total += carrito[i].precio;
+		// }
+
+		// let i = 0;
+		// do {
+		// 	total += carrito[i].precio;
+		// 	i++;
+		// } while (i < carrito.length);
+
+		// Alternativas de JavaScript moderno
+		for (const producto of carrito) {
+			//total=total + producto.precio;
+			total += producto.precio;
+		}
+
+		// Alternativa utilizando el array method forEach
+		// foreach permite recorrer todo el array
+		// x y mes son alias que representan al elemento del array que se va iterando en cada vuelta
+		// En otros lenguajes y tecnologías se les llama funciones lambda o expresiones lambda
+
+		carrito.forEach(x => total += x.precio);
+
+		carrito.forEach(x => {
+			console.log(x);
+			console.log(x.nombre);
+			total += x.precio;
+		});
+		console.log(total);
+
+		// Además de recorrer el array, podemos saber el índice del elemento iterado poniendo un segundo argumento (en este ejemplo i. i es un alias que representa el índice)
+		meses.forEach((mes, i) => {
+			console.log(i);
+			console.log(mes);
+			if (mes === 'Enero') {
+				console.log('Enero si existe...');
+			}
+		});
+
+		// map permite recorrer todo el array
+		// La diferencia entre map y foreach es que foreach solamente recorre el array. map lo recorre y devuelve el array
+		// Esto nos permite crear un array nuevo a partir de uno original
+		const longitudes = meses.map(x => (
+			x.length
+		));
+		console.log(longitudes);
+
+		// forEach vs map
+		// forEach recorre el array y por cada producto creamos una propiedad llamada iva
+		carrito.forEach(x => x.iva = x.precio * .21);
+
+		// map recorre el array y crea un clon del original transformado en otro. En este caso
+		// añadiendo una propiedad llamada iva
+		const carritoConIva = carrito.map(x => ({
+			nombre: x.nombre, precio: x.precio, iva: x.precio * .21
+		}));
+
+        // Simulación de map con forEach
+        // const carritoConIva=[];
+        // carrito.forEach(x=>{
+        //     carritoConIva.push({
+        //         nombre: x.nombre, precio: x.precio, iva: x.precio * .21
+        //     })
+        // })
+
+		console.log(carritoConIva);
+		console.log(carrito);
+		// ¿Cuándo utilizar map y cuando utilizar forEach?
+		// Si planeas alterar los elementos de un array aplicando alguna función, deberías usar el método map, ya que no modifica el array original y devuelve un array nuevo.
+		// Si quieres recorrer todos los elementos de un array y no necesitas crear un array nuevo partiendo del original deberías usar foreach
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Métodos de strings</title>
+    <meta charset="UTF-8" />
+    <script>
+        // Replace permite reemplazar un texto por otro
+        const producto = 'Monitor 20 Pulgadas';
+        console.log(producto.replace('20', '24'));
+
+        // Slice te va a permitir extraer una parte de una cadena
+        console.log(producto.slice(0, 10)); // Iniciar en 0 y cortar hasta 10
+        console.log(producto.slice(8)); // Cortar desde el 8 hasta el fin
+
+        // Existe uno similar a Slice que se llama substring
+        console.log(producto.substring(0, 10));
+        console.log(producto.substring(5));
+
+        // Si has visto algunos sitios web muestran la primera letra de tu nombre:
+        const nombre = 'Juan';
+        console.log(nombre.substring(0, 1));
+        console.log(nombre.charAt(0));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Gibstone;
+  src: url(../Google\ font\ y\ otras\ fuentes/Gibstone);
+}
+
+body {
+    background: black;
+    font-family: Gibstone;
+  }
+  
+  h1 {
+    color: yellow;
+    font-size: xx-large;
+  }
+  
+  p {
+    color: white;
+    font-size: medium;
+  }

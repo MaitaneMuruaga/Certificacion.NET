@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de objetos</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Los objetos son muy importantes en JavaScript. En lugar de crear diferentes variables:
+		const nombreProducto = 'Monitor 20 Pulgadas';
+		const precio = 30;
+		const disponible = true;
+
+		// Podemos crear un objeto que agrupe toda esta información en una sola variable 
+		// nombreProducto, precio y disponible serían las propiedades
+		// A cada propiedad se le asigna el valor utilizando :
+		// A cada propiedad : valor se le llama en programación un 'par de clave/valor', en inglés key/value
+		const producto = {
+			nombreProducto: 'Monitor 20 Pulgadas', // La , es importante, sin ella tendriamos un error
+			precio: 30,
+			disponible: true // en el último elemento la , es opcional
+		}
+
+        producto.precio = 50;
+		console.log(producto);
+	</script>
+</body>
+
+</html>

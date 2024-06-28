@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso del bloque if</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// De momento todo nuestro código se ejecuta de arriba hacia abajo salvo cuando llamamos una función
+		// Algunas veces vas a desear que tu código se ejecute basado en una condición
+		// Y para ejecutar nuestro código basado en una condición, se utilizan las estructuras de control...
+
+		// Bloque if
+		const edad = prompt('Introduce edad');
+		if (edad >= 18) {
+			alert('Puedes conducir un coche');
+		} else {
+			alert('No puedes conducir un coche');
+		}
+
+		// Veamos otras comparaciones
+		// Suponemos que hemos puesto en edad 18. Edad, en realidad, sería '18' porque es un string
+		// Comparador de valor. El doble igual compara solo valor. 18=='18' devuelve true
+		if (edad == 18) {
+			console.log('Sí tienes 18 años');
+		} else {
+			console.log('No tienes 18 años');
+		}
+
+		// Comparador estricto de tipo y valor. 
+		// El triple igual compara valor y tipo . 18==='18' devuelve false
+		if (edad === 18) {
+			console.log('Sí tienes 18 años');
+		} else {
+			console.log('No tienes 18 años');
+		}
+
+		// No es igual
+		if (edad != 18) {
+			console.log('No tienes 18 años');
+		} else {
+			console.log('Sí tienes 18 años');
+		}
+
+		// Comparador estricto de tipo y valor
+		if (edad !== 18) {
+			console.log('No tienes 18 años');
+		} else {
+			console.log('Sí tienes 18 años');
+		}
+	</script>
+</body>
+
+</html>

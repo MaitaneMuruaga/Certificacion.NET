@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de while</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Otro iterador es el while. Se ejecuta mientras una condición sea verdadera
+		// El while se ejecuta mientras una condición sea verdadera, por lo tanto si inicicializamos en 20, no hará nada.
+		let i = 0;
+		while (i < 10) { // condicion
+			// Bloque de código...
+			console.log(`Numero: ${i}`);
+			i++; // incremento
+		}
+
+		// Su equivalente en for
+		// for (let i = 0; i < 10; i++) {
+		// 	console.log(`Numero: ${i}`);
+		// }
+
+		// Muy parecido es el iterador do while. Este se ejecuta al menos una vez y después verifica si la condición se cumple.
+		i = 20;
+		do {
+			console.log(`Numero: ${i}`);
+			i++;
+		} while (i < 10);
+
+		// Lo que hace diferente a un while de un do/while, es que al menos do/while se va a ejecutar una vez aunque la condición no se cumpla
+
+		// Este bloque while nos sirve para obligar que el usuario nos escriba un número
+		// isNaN(variable) nos devuelve un true si la variable no es un número y un false si lo es
+		let numero;
+		do {
+			numero = Number(prompt('Introduce número'));
+			if (isNaN(numero)) {
+				alert('Debes introducir un número');
+			} else {
+				// haríamos lo que procediera con el número
+			}
+		} while (isNaN(numero));
+	</script>
+</body>
+
+</html>

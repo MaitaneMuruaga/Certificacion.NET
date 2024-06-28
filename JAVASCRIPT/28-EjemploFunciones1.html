@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de funciones</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// En JavaScript hay muchas funciones que ya vienen con el lenguaje. console, alert y prompt son funciones. Si en una línea de código pones window. verás
+		// estas y otras muchas funciones
+		// Las funciones en cualquier lenguaje son una serie de procedimientos o instrucciones que realizan una acción. 
+		// Una ventaja de las funciones es que permiten tener un código más ordenado fácil de mantener.
+		// Otra ventaja de las funciones es que son reutilizables. Puedes tener una función que valide un formulario y utilizarla en todos tus formularios, 
+		// puedes tener también una función que envie datos al servidor y reutilizarla múltiples veces.
+
+		// Existen 2 formas de crear funciones en JavaScript
+		// Declaración de Función. La expresión de la función utiliza la palabra reservada function, seguida de un nombre y un paréntesis.
+		// En este paréntesis se colocan los argumentos y finalmente el cuerpo de la función se define por unas llaves.
+
+		function sumar() {
+			console.log(2 + 2);
+		}
+
+		const nombre = 'Juan Luis';
+		console.log(nombre.toUpperCase()); // Ejemplo de una función que no recibe argumentos para que funcione
+		console.log(nombre.charAt(0)); // Ejemplo de una función que sí recibe argumentos para que funcione
+
+		// Las funciones deben llamarse, de otra forma en realidad no hacen mucho:
+		sumar(); // se manda llamar por su nombre seguido de los paréntesis ()
+
+
+		// Expresión de función - Este tipo de funciones se asigna como si fuera una variable
+		const saludar = function () {
+			alert('hola desde función saludo');
+		}
+		saludar();
+
+		function saludo() {
+			alert('hola desde función saludo');
+		}
+		saludo(); // se manda llamar de la misma forma
+
+		// Esta es la forma más moderna de declarar funciones en JavaScript. Son las funciones flecha y las que promueven los
+		// frameworks modernos de desarrollo frontend
+		const saludarFlecha = () => {
+			alert('hola desde función saludo');
+		}
+		saludarFlecha();
+
+	</script>
+</body>
+
+</html>

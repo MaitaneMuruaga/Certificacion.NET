@@ -1,0 +1,44 @@
+/* Cambios en el nav */
+.active{
+    font-weight: bold;
+}
+
+/* Cambios en las columnas */
+.row-left{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.display-2{
+    font-size: 50px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+button{
+    margin-bottom: 10px;
+}
+
+/* Cambios en el formulario */
+.form-check{
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 10px;
+}
+
+.line{
+    width: 100%;
+}
+
+/* Cambios en el footer */
+
+footer{
+    padding-left: 10px;
+}

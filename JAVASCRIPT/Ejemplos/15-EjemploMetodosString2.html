@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Métodos de strings</title>
+    <meta charset="UTF-8" />
+    <script>
+        const producto = '        Monitor 20 Pulgadas      ';
+        console.log(producto);
+        console.log(producto.length);
+
+        // Eliminar el inicio
+        console.log(producto.trimStart()); // Elimina todos los espacios en blanco del principio
+        console.log(producto.trimEnd()); // Elimina todos los espacios en blancos del final
+
+        // Los métodos en javaScript se pueden encadenar, es decir, colocarse uno junto al otro
+        console.log(producto.trimStart().trimEnd()); // Cortar en ambas direcciones
+
+        // Un método tradicional es trim que hace lo mismo
+        console.log(producto.trim());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

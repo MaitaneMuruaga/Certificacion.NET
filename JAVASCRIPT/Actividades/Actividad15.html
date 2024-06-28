@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 15</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style type="text/css">
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type='email'] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type='password'] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            <form class="form-signin">
+                
+                <!-- Un cuadro de texto para introducir un nombre cuya introducción será obligatoria. -->
+                <div class="form-group">
+                    <label for="name" class="sr-only my-2">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Introduce tu nombre" name="name" id="name" required
+                        autofocus />
+                </div>
+
+                <!-- Un cuadro de texto para introducir una edad cuya introducción será obligatoria. -->
+                <div class="form-group">
+                    <label for="age" class="sr-only my-2">Edad</label>
+                    <input type="number" min="0" class="form-control" placeholder="Introduce tu edad" name="age" id="age"
+                        required />
+                </div>
+
+                <!-- Un cuadro de texto para introducir un DNI cuya introducción será obligatoria. 
+                Deberemos asegurarnos de que el dato introducido sea un DNI (8 dígitos y una letra final) -->
+                <div class="form-group">
+                    <label for="idCard" class="sr-only my-2">DNI</label>
+                    <input type="text" maxlength="9" pattern="/[0-9]{8}[A-Z]?/g" class="form-control" placeholder="Introduzca tu DNI" name="idCard" id="idCard" title="El DNI debe tener un total de 8 carácteres y una letra"
+                        required />
+                </div>
+
+                <!-- Un botón de tipo submit. -->
+                <div class="form-group mt-4">
+                    <button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">
+                        Login
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Variables para controlar si el email y el password son válidos
+        let nameValido = false;
+        let idCardValido = false;
+        let ageValido = false;
+
+        // Seleccionamos los elementos del formulario
+        const inputName = document.querySelector('#name');
+        const inputAge = document.querySelector('#age');
+        const inputIdCard = document.querySelector('#idCard');
+        const formulario = document.querySelector('.form-signin');
+        const btnLogin = document.querySelector('#btnLogin');
+        const nameHelp = document.querySelector('#nameHelp');
+        const ageHelp = document.querySelector('#ageHelp');
+        const idCardHelp = document.querySelector('#idCardHelp');
+
+        const validarName = (e) => {
+            // e.target.value tiene el texto del input email
+            const vacio = estaVacio(e.target.value);
+            const nameOK = estaOk(e.target.value);
+            // Si el email está vacío o no es correcto mostramos el mensaje
+            if (vacio || !nameOK) {
+                nameHelp.hidden = false; // mostramos el mensaje de error
+                nameHelp.textContent = 'Introduzca un nombre válido';
+                nameValido = false;
+            } else {
+                nameHelp.hidden = true; // ocultamos el mensaje de error
+                nameHelp.textContent = '';
+                nameValido = true;
+            }
+            validarEnviar(); // chequeamos si el email y el password son correctos
+        }
+
+        const validarIdCard = (e) => {
+            const vacio = estaVacio(e.target.value);
+            if (vacio) {
+                idCardHelp.hidden = false;
+                idCardHelp.textContent = 'DNI obligatorio';
+                idCardValido = false;
+            } else {
+                idCardHelp.hidden = true;
+                idCardHelp.textContent = '';
+                idCardValido = true;
+            }
+            validarEnviar();
+        }
+
+        const estaVacio = (nombre) => {
+            return nombre.trim() === ''; // retornamos true si está vacío o false si no lo está
+        }
+
+        const estaOk = (nombre) => {
+            // Los caracteres que aparecen abajo forma parte de lo que se llama una expresión regular
+            // La sintaxis de algunos campos (código postal, email, dni...) tienen una misma estructura
+            // Las expresiones regulares nos permiten examinar si un dato cumple con una determinada estructura
+            const regex = /^([a-zA-Z\u00C0-\u024F]+)$|^(\([a-zA-Z\u00C0-\u024F]+\))$/;
+            const resultado = regex.test(nombre); // comparamos la expresión regular con el texto mediante el método test
+            return resultado; // retornamos true si el texto es un email y false si no lo es
+        }
+
+        const validarAge = (e) => {
+            const vacio = estaVacio(e.target.value);
+            if (vacio) {
+                ageHelp.hidden = false;
+                ageHelp.textContent = 'Introduzca una edad';
+                ageValido = false;
+            } else {
+                ageHelp.hidden = true;
+                ageHelp.textContent = '';
+                ageValido = true;
+            }
+            validarEnviar();
+        }
+
+        const validarEnviar = () => {
+            // Si el email es válido y el password es válido habilitamos el botón del login
+            // Si no es así lo deshabilitamos
+            if (nameValido && idCardValido && ageValido) {
+                btnLogin.disabled = false;
+            } else {
+                btnLogin.disabled = true;
+            }
+        }
+
+        const login = (e) => {
+            // preventDefault anula la acción predeterminada del formulario
+            // En JavaScript moderno se anula este automatismo para poder manipular los formularios
+            // Normalmente, cuando tenemos un formulario será para enviar los datos a algún servidor
+            // e.preventDefault nos permite hacer un envío de datos personalizado, algo que veremos más adelante
+            e.preventDefault();
+            // Creamos una alerta
+            const alertaExito = document.createElement('small');
+            alertaExito.classList.add('form-text', 'text-success');
+            alertaExito.textContent = 'Datos enviados';
+            // Y la agregamos en la parte de abajo
+            formulario.appendChild(alertaExito);
+        }
+
+
+        // Asignamos eventos
+        inputName.addEventListener('input', validarName);
+        inputAge.addEventListener('input', validarAge);
+        inputIdCard.addEventListener('input', validarIdCard);
+        formulario.addEventListener('submit', btnLogin);
+
+    </script>
+
+</body>
+
+</html>

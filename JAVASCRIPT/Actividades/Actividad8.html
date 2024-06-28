@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 8</title>
+
+    </head>
+
+    <body>
+        <script>
+
+            //PARTE 1.
+            //Crear una función que reciba dos números por argumentos, los sume y saque un alert con el resultado. 
+            let sumar = function (numero1,numero2) {
+                alert(numero1 + numero2);
+            }
+
+            //Pedir dos números mediante sendos prompt y ejecutar la función anterior pasándole los números introducidos. 
+            let numero1 = parseFloat(prompt('Introduce el primer número'));
+            let numero2 = parseFloat(prompt('Introduce el segundo número'));
+            sumar(numero1,numero2);
+
+            
+            //PARTE 2. 
+            //Crear una función que reciba dos números por argumentos, los multiplique y devuelva el resultado del producto. 
+            let multiplicar = function (numero3,numero4) {
+                return numero3 * numero4;
+            }
+
+            // Pedir dos números mediante sendos prompt y ejecutar la función anterior. Asignar el resultado a una variable. 
+            let numero3 = parseFloat(prompt('Introduce el primer número'));
+            let numero4 = parseFloat(prompt('Introduce el segundo número'));
+            let resultadoMultiplicacion = multiplicar(numero3,numero4);
+            console.log("El resultado de la multiplicación es:" + resultadoMultiplicacion)
+
+        </script>
+    
+    </body>
+
+</html>

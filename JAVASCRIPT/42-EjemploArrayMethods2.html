@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de array methods</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
+
+		const carrito = [
+			{ nombre: 'Monitor 27 Pulgadas', precio: 500 },
+			{ nombre: 'Televisión', precio: 100 },
+			{ nombre: 'Tablet', precio: 200 },
+			{ nombre: 'Auriculares', precio: 300 },
+			{ nombre: 'Teclado', precio: 400 },
+			{ nombre: 'Teléfono móvil', precio: 700 }
+		]
+
+		// Otros métodos. 
+		// findIndex te dirá el indice del elemento en el array. Si no lo encuentra, devuelve -1
+		const indice = meses.findIndex(x => x === 'Abril'); // Buscando Agosto devolvería -1
+		console.log(indice);
+
+		const indiceTeclado = carrito.findIndex(x => x.nombre === 'Teclados');
+
+		if (indiceTeclado === -1) {
+			console.log('No hay teclados en el carrito');
+		} else {
+			console.log(indiceTeclado);
+		}
+
+		// includes nos dice si un elemento existe en el array
+		const resultado = meses.includes('Enero');
+		console.log(resultado);
+
+		// some rastrea dentro de un objeto y nos dice si una propiedad tiene un valor
+		const existe = carrito.some(x => x.nombre === 'Teclado');
+		console.log(existe);
+
+		// filter permite filtrar un array según una o varias condiciones
+		const resultadoFilter1 = carrito.filter(x => x.precio > 400); // Todos los mayores a 400 - añadir  && producto.precio < 600
+		const resultadoFilter2 = carrito.filter(x => x.nombre === 'Tablet'); // Producto con nombre Tablet
+		const resultadoFilter3 = carrito.filter(x => x.nombre !== 'Teclado'); // Todos menos el teclado
+
+		// find crea un objeto a partir de una condición. Captura solo el primero
+		const resultadoFind = carrito.find(x => x.precio > 400);
+		console.log(resultadoFind);
+
+		// every devuelve true si todos los elementos del array cumplen una condición
+		const todosCumplenCondicion = carrito.every(x => x.precio < 1000); // Devuelve true porque todos tienen el precio < 1000
+		console.log(todosCumplenCondicion);
+	</script>
+</body>
+
+</html>

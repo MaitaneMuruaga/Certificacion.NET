@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <!-- Tenemos primero una simple estructura de HTML -->
+    <h1>Actividad 16</h1>
+    <!-- Botón para cargar la API -->
+    <button type="button" id="cargarAPI">
+        Cargar API
+    </button>
+    <div id="contenido"></div>
+    <p style="color: blue;"></p>
+
+    <script>
+        // Seleccionamos el elemento button
+        const btncargarAPI = document.querySelector ('#cargarAPI');
+        // Creamos una función para obtener datos del json
+        const obtenerDatosAPI = async () => {
+            try {
+                // Con este try, enviamos una respuesta a la URL que hemos introducido.
+                const respuesta = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
+                // Luego recibimos un resultado de la respuesta de json.
+                const resultado = await respuesta.json();
+                console.log(resultado.drinks);
+                // Mostramos este resultado desde la consola
+                mostrarHTMLAPI(resultado.drinks);
+            }
+            catch (error) {
+                console.log(error)
+            } // Si no encuentra la respuesta que buscamos, nos devolverá un error.
+        }
+        // Esta función nos permite llamar a json mediante la URL que nos ha proporcionado el ejercicio y por consiguiente, nos devolverá un resultado, en este caso "drinks" que es una tributo con un Array de objetos
+
+
+        // Vamos a declarar una función para mostrar dichos datos desde HMTL. Queremos que solo nos muestre el nombre de la bebida, su instrucción de preparación y su imagen.
+        const mostrarHTMLAPI = (datos) => {
+            const contenido = document.querySelector ('#contenido')
+            let html = '';
+            // En esta variable vamos a introducir los valores que vamos a desestructurar.
+            datos.forEach(bebida => {
+                // Desestructuramos:
+                const { strDrink, strInstructions, strDrinkThumb } = bebida;
+                // Introducimos los tres valores en una estructura HTML:
+                html += `
+                    <h2 style="color: blue;">Bebida: ${strDrink} </h2>
+                    <p>Preparación: ${strInstructions} </p>
+                    <img src="${strDrinkThumb}" alt="${strDrink}"> 
+                `
+            });
+            contenido.innerHTML = html; // Esto nos permite meter una estructura HTML entre comillas.
+        }
+        btncargarAPI.addEventListener('click', obtenerDatosAPI);
+        // Añadimos un evento al botón.
+    </script>
+</body>
+
+</html>
+
+

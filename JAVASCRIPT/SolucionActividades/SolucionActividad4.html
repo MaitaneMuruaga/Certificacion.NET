@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Actividad 4</title>
+</head>
+<body>
+    <script>
+        // PART 1
+        let nombre = prompt("Introduce tu nombre: "); // "Beatriz";
+        let apellido = prompt ("Introduce tu apellido: "); // "Gonzalez";
+
+        console.log(`Tu nombre es ${nombre} y te apellidas ${apellido}`);
+
+        console.log(nombre.includes("a"));  
+
+        let nombreConA = nombre.split(" ");
+        console.log(nombreConA[0]);    
+
+        nombre = nombre.indexOf("a");
+        console.log(nombre);
+       
+
+        // PART 2
+        let localidad = "     Bermeo       ";
+        let localidadSinEspacios = localidad.trim();
+        let primeraLetraLocalidad = localidadSinEspacios.charAt(0);
+
+        console.log(localidad);
+        console.log(localidadSinEspacios);
+        console.log(primeraLetraLocalidad);
+
+        // PART 3
+        let email = "bea.glez@example.com";
+        let emailEnMayusculas = email.toUpperCase();
+        let partsEmail = email.split("@");
+
+        console.log(email);
+        console.log(emailEnMayusculas);
+        console.log(partsEmail);
+
+    </script>
+</body>
+</html>

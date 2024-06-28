@@ -1,0 +1,37 @@
+/* Barra de navegación (navbar) */
+.navbar{
+    height: 80px;
+    background-color:#abdbe3 !important;
+} 
+
+.navbar > .container-fluid > .collapse navbar-collapse > .navbar-nav > .nav-item > .nav-link:active{
+    color: #abdbe3;
+    font-weight: bold;
+}
+
+.header{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.sub-header{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+/* Div accordion (parte izquierda de la web) */
+
+.accordion{
+    margin-left: 10px;
+    margin-right: 10px;
+     
+}
+
+.accordion-button{
+    background-color:antiquewhite;
+}
+
+
+
+

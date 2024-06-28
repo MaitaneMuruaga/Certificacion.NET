@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de for of</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// For of no es como un for tradicional que ejecuta una pieza de código mientras una condición sea verdadera.
+		// Este ejecuta mientras haya elementos por iterar en un array
+		let pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar JavaScript'];
+
+		// pendiente es un alias, podemos poner lo que queramos. Representará a cada uno de los elementos del array
+		for (const pendiente of pendientes) {
+			console.log(pendiente);
+		}
+
+		const carrito = [
+			{ nombre: 'Monitor 20 Pulgadas', precio: 500 },
+			{ nombre: 'Televisión 50 Pulgadas', precio: 700 },
+			{ nombre: 'Tablet ', precio: 300 },
+			{ nombre: 'Auriculares', precio: 200 },
+			{ nombre: 'Teclado', precio: 50 }
+		];
+
+		let total = 0;
+		for (const producto of carrito) {
+			console.log(producto.nombre);
+			total += producto.precio;
+		}
+		console.log(total);
+	</script>
+</body>
+
+</html>

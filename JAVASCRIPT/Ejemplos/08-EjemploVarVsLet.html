@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Variables con var y let</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <p>Ejemplo de variables con let y var</p>
+    <script>
+        var a = 1;
+        let b = 1;
+
+        if (true) {
+            var a = 2; // con var modificamos a. Con let, tenemos un valor diferente para la variable global que para la variable local del bloque if
+            console.log(a); //2
+            let b = 2;
+            console.log(b); //2
+        }
+
+        console.log(a); // 2
+        console.log(b); // 1 Con let, se diferencian mucho mejor las variables de alcance local y global
+
+        // Con var, se pueden emplear variables antes de utilizarlas, lo que no es una buena práctica
+        console.log(saludo); // undefined 
+
+        var saludo = 'Hola';
+        console.log(saludo);
+
+        // Con let, haciendo lo mismo da error
+        console.log(despedida); // undefined 
+
+        let despedida = 'Adiós';
+        console.log(despedida);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 7</title>
+
+    </head>
+
+    <body>
+
+        <script>
+            let vecindario = []
+                vecindario.push({nombre: "Juan", edad: 30, piso: 5});
+                vecindario.push({nombre: "María", edad: 25,piso: 2});
+                vecindario.push({nombre: "Pedro", edad: 40, piso: 8});
+                vecindario.push({nombre: "Lucía", edad: 35, piso: 2});
+                vecindario.push({nombre: "Ana", edad: 28, piso: 9})
+
+            let pisoBorrar = prompt("Piso del vecino que quieres borrar")
+       
+            vecindario.splice(pisoBorrar, 1) 
+            console.log(vecindario)
+   
+    </script>
+
+    </body>
+
+</html>

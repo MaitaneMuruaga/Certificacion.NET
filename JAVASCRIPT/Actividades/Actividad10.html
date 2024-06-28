@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 10</title>
+
+    </head>
+
+    <body>
+        <script>
+            while(true){
+            //Pedir al usuario el tipo de operación
+            let operacion = prompt("Introduce el tipo de operación a realizar:\nS para suma, R para resta, P para producto, D para división").toUpperCase();
+        
+            //Verificar si el tipo de operación es válido
+            if (operacion === 'S' || operacion === 'R' || operacion === 'P' || operacion === 'D') {
+                
+            //Pedir dos números al usuario
+            let num1 = parseFloat(prompt("Introduce el primer número:"));
+            let num2 = parseFloat(prompt("Introduce el segundo número:"));
+
+            
+            let resultado;
+                switch(operacion) {
+                    case 'S':
+                        resultado = num1 + num2;
+                        break;
+                    case 'R':
+                        resultado = num1 - num2;
+                        break;
+                    case 'P':
+                        resultado = num1 * num2;
+                        break;
+                    case 'D':
+                        if (num2 !== 0) {
+                        resultado = num1 / num2;
+                        } else {
+                        alert("No se puede dividir entre 0");
+                        }
+                        break;
+                }   
+                    if (resultado !== undefined) {
+                    alert(`El resultado de la operación ${operacion} entre ${num1} y ${num2} es: ${resultado}`);
+                }
+                } else {
+                    alert("Error: Tipo de operación no válido");
+                }       
+            }
+
+        </script>
+    
+    </body>
+
+</html>

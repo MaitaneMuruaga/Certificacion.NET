@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de for</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// El bloque for (loop for) ejecuta un código un número determinado de veces
+		// La declaración del bucle inicializa una variable llamada i a 0.
+		// Determina que mientras el valor de i sea inferior o igual a 10 el bucle se debe repetir.
+		// Al comienzo de cada repetición la variable i incrementará su valor en uno.
+		// Por lo tanto el bucle se repetirá 10 veces. 
+		// Cuando i sea 10, no cumplirá la condición y el programa se saldrá del bucle siguiendo con el resto de instrucciones.
+
+		for (let i = 0; i <= 10; i += 2) {
+			console.log(`Numero: ${i} `);
+		}
+
+		// Este sería un ejemplo más práctico. Este bucle for sacaría los números pares comenzando desde 100 hasta 10 
+		// Si en vez de i-- pondríamos i++ estaríamos ante un bucle infinito provocado por un error lógico de planteamiento en el bucle
+		for (let i = 100; i >= 10; i--) {
+			if (i % 2 === 0) {
+				console.log(`Numero ${i} es par `);
+			} else {
+				console.log(`Numero ${i} es impar `);
+			}
+		}
+
+		// Los for son útiles cuando los aplicamos sobre un array, por ejemplo un carrito de compra
+		// carrito[0] sería el monitor, carrito[1] sería la tele y carrito[carrito.length - 1] sería el teclado
+		const carrito = [
+			{ nombre: 'Monitor 20 Pulgadas', precio: 500 },
+			{ nombre: 'Televisión 50 Pulgadas', precio: 700 },
+			{ nombre: 'Tablet ', precio: 300 },
+			{ nombre: 'Auriculares', precio: 200 },
+			{ nombre: 'Teclado', precio: 50 }
+		];
+
+		// carrito.forEach(x=>console.log(x.nombre)); 
+        let suma = 0;
+
+		carrito.forEach((x,i)=>{
+            console.log(x.nombre)
+            console.log('Contador forEach',i)
+            suma += x.precio;
+			x.iva = x.precio * .21;
+        }); // más moderno
+
+		for (let i = 0; i < carrito.length; i++) {
+			console.log(i, carrito[i].nombre);
+			// suma = suma + carrito[i].precio;
+			suma += carrito[i].precio;
+			carrito[i].iva = carrito[i].precio * .21;
+		}
+
+		console.log(carrito);
+		console.log(suma);
+
+		// Recorrer al revés
+		// carrito.reverse().forEach(x=>console.log(x.nombre)); // más moderno
+		for (let i = carrito.length - 1; i >= 0; i--) {
+			console.log(i, carrito[i].nombre);
+		}
+
+        //Ejemplo de bucle infinito
+        //for (let i = carrito.length - 1; i >= 0)
+			// console.log(i);
+		// }
+
+	</script>
+</body>
+
+</html>

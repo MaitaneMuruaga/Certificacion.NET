@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Operadores numéricos</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <p>Ejemplo de uso de operadores</p>
+    <script>
+        let resultado; // Si no damos un valor por defecto, será undefined
+        const numero1 = 5;
+        const numero2 = 3;
+        console.log('Resultado inicial al difinir la variable sin darle valor por defecto', resultado)
+
+
+        // Los operadores nos permiten realizar sumas, multiplicaciones, restas y otras operaciones matemáticas
+        // Suma
+        resultado = numero1 + numero2;
+        console.log('Suma', resultado);
+
+        // Resta
+        resultado = numero1 - numero2;
+        console.log('Resta', resultado);
+
+        // Producto
+        resultado = numero1 * numero2;
+        console.log('Producto', resultado);
+
+        // División
+        resultado = numero1 / numero2;
+        console.log('División', resultado);
+
+        // Módulo o resto
+        resultado = numero1 % numero2;
+        console.log('Resto', resultado);
+
+        // El Orden en que se ejecutan las operaciones en JavaScript es igual al que nos enseñaron
+        let resultado2;
+        // El orden de las operaciones
+        resultado2 = 20 + 30 * 2; // Da 80. Primero multiplica 30*2 y luego suma 20
+        console.log(resultado2);
+        resultado2 = (20 + 30) * 2; // Da 100. Primero suma 20+30 y luego multiplica por dos
+        console.log(resultado2);
+
+        // 20% De descuento en un carrito de compra.
+        resultado2 = (20 + 10 + 30 + 40 + 50) * .20; // Al resumado de sumar todo lo multiplica por 0.20
+        console.log('Descuento: ', resultado2);
+
+        // Veamos como ir incrementando un valor de 1 en 1 o en determinada cantidad
+        // Incluir incremento más 1 y menos 1
+
+        // Si se usa postfijo, con operador después del operando (por ejemplo, x++), el operador de incremento incrementa y devuelve el valor antes de incrementar.
+        // Si se usa como prefijo, con el operador antes del operando (por ejemplo, ++x), el operador de incremento incrementa y devuelve el valor después del incremento.
+
+        let puntos = 5;
+        puntos++; // Esto es lo mismo que poner puntos=puntos+1;
+        console.log('Incrementamos 1', puntos);
+        puntos--;
+        console.log('Bajamos 1', puntos);
+        ++puntos;
+        console.log('Incrementamos 1', puntos);
+        --puntos;
+        console.log('Bajamos 1', puntos);
+
+        let puntos2 = 10;
+        // Diferencia entre poner ++ o -- al principio o al final
+        console.log('Premio!!!!', puntos2++ * 2); // Primero multiplica puntos2 por 2 y luego suma 1 a puntos2
+        // Aquí puntos2 es 11 porque después de multiplicarlo por 2 le ha sumado 1
+        console.log('Premio!!!!', ++puntos2 * 2); // Primero suma a puntos2 1 y luego multiplica ese valor por 2
+
+        puntos += 3; // Esto es lo mismo que poner puntos=puntos+3;
+        puntos -= 3; // Esto es lo mismo que poner puntos=puntos-3;
+        puntos *= 3; // Esto es lo mismo que poner puntos=puntos*3;
+        puntos /= 3; // Esto es lo mismo que poner puntos=puntos/3;
+        // Esto calcula el importe + IVA
+        let importe = 100;
+        importe += importe * .21;
+        // importe = importe + (importe *.21); Sería lo mismo
+
+        console.log(puntos);
+    </script>
+</body>
+
+</html>

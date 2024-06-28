@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de funciones</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Funciones que toman parámetros y argumentos
+		// Las anteriores funciones eran demasiado simples. Para que tus funciones puedan ser más versátiles e inteligentes deberán utilizar parámetros y argumentos
+		function saludar(nombre, apellido) { // nombre y apellido son parámetros. Son valores que se le pueden pasar a la función.
+			console.log(`Hola ${nombre} ${apellido}`);
+		}
+
+		saludar('Juan Luis', 'Ochoa'); // Juan Luis y Ochoa son argumentos
+
+		// Parámetros por defecto
+		// Algunas veces mandarás llamar una función que no tendrá los argumentos que se requieren, por ejemplo cuando rellenas un formulario y algunos datos no son obligatorios
+		// Puedes ver que en la consola aparecerá undefined
+		function saludar2(nombre = 'Desconocido', apellido = '') { // nombre y apellido son parámetros que en este caso tienen valores por defecto
+			console.log(`Hola ${nombre} ${apellido}`);
+		}
+
+		saludar2('Juan Luis', 'Ochoa'); // Resultado en consola: Hola Juan Luis Ochoa
+		saludar2('Juan Luis'); // Resultado en consola: Hola Juan Luis
+		saludar2(); // Resultado en consola: Hola Desconocido
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejemplo de uso de strings</title>
+    <meta charset="UTF-8" />
+    <script>
+        // Los strings o cadenas de texto representan un texto que se puede asignar a una variable
+        // existen 3 formas de crearlos.
+
+        // Esta es una de las formas y es la más usada. Se pueden usar comillas simples o dobles. El estándar entre desarrolladores es usar comillas simples
+        const nombre = 'Juan Luis';
+        const apellido = 'Ochoa';
+
+        // pero nunca las mezcles
+        // const nombre = "Juan Luis';
+
+        // Esta es otra manera
+        const localidad = String('Pamplona');
+
+        // Y esta es otra
+        const profesion = new String('Desarrollador');
+
+        // Ejemplo con Pulgadas. La barra \ permite incluir las comillas como parte de un string
+        // A esta técnica se le llama mecanismo de escape. En este caso, lo que hemos hecho es "escapar" las comillas
+        const producto = 'Monitor 24\'';
+
+        console.log(producto);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

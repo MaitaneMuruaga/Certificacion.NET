@@ -1,0 +1,27 @@
+body{
+    background-color: aliceblue;
+}
+
+h1{
+    color: blueviolet;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+.fast{
+    color: brown;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact{
+    color: grey;
+    text-decoration:line-through;
+    text-decoration-color: red;
+}
+
+#list{
+    text-align: center; 
+}

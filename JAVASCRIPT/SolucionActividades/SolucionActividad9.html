@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 9</title>
+
+    </head>
+
+    <body>
+        <script>
+            //PARTE1. 
+            //Preguntar por teclado un número.
+            let number = prompt('Introduce un número');
+
+            //Sacar un mensaje diciendo si el número es negativo o no. isNaN es un número.
+            if (isNaN(number)){
+                alert("Dato no numérico");
+            } else if (parseFloat(number) < 0) {
+                alert("El número introducido es negativo .");
+            } else {
+                alert("El número introducido es positivo.");
+            }
+
+            //Preguntar por teclado una frase y recogerla en una variable.
+            let frase = prompt('Introduce una frase');
+            let fraseUser = frase.toLowerCase();
+
+            //Preguntar por teclado una frase.
+            let letra = prompt('Elige una letra del abecedario');
+
+            //Utilizar el bloque if para ver si la letra existe en la frase.
+            if (fraseUser.includes(letra)) {
+                alert(" genial, 👋 La letra existe .");
+            } else {
+                alert("La letra no existe en la frase en la frase que me has dado.");
+            }
+
+
+            //PARTE 2.
+            //Pedir una letra por teclado y utilizar el bloque switch para ver si es vocal o consosnante.
+            let nuevaLetra = prompt('Elige otra letra del abecedario');
+
+            switch (nuevaLetra) {
+                case 1: 'a';
+                case 2: 'e';
+                case 3: 'i';
+                case 4: 'o';
+                case 5: 'u';
+                    alert('Has elegido una vocal');
+                    break;
+                default: 
+                    alert('Has elegido un consonante');
+            }
+
+            //PARTE 3.
+            //Pedir un número por teclado y sacar un mensaje diciendo si el número tiene dos dígitos o no. (Revisar si está entre 10 y 99)
+            const newNumber = Number(prompt('Introduzca un número'));
+                if (newNumber >= 10 && numero <=99) {
+                    alert(`El número ${newNumber} tiene dos cifras`);
+            } else if (newNumber < 10 && numero >= 1) {
+                alert(`El número ${newNumber} es demasiado pequeño`);
+            } else if (newNumber >= 100 && numero <= 1000) {
+                alert(`El número ${newNumber} es demasiado grande`)
+            }
+
+        </script>
+    
+    </body>
+
+</html>

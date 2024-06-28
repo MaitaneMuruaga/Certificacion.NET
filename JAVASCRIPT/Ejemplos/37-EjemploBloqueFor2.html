@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de for</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Veamos lo que es break y continue. break cortará la ejecución del for, mientras que continue nos permitirá pasar a la siguiente vuelta del bucle.
+		// Lo normal es que ambos se ejecuten cuando una condición se cumpla
+		for (let i = 0; i <= 10; i++) {
+			if (i === 5) {
+				console.log('Estamos en el 5... FIN.');
+				break;
+			}
+			console.log(`Numero:  ${i} `);
+		}
+
+		for (let i = 0; i <= 10; i++) {
+			if (i === 5) {
+				console.log('Estamos en el 5... CONTINUAR....');
+				continue;
+			}
+			console.log(`Numero:  ${i} `);
+		}
+
+		//  Y en que casos puedes utilizar el continue?
+		const carrito = [
+			{ nombre: 'Monitor 20 Pulgadas', precio: 500 },
+			{ nombre: 'Televisión 50 Pulgadas', precio: 700 },
+			{ nombre: 'Tablet ', precio: 300, descuento: true },
+			{ nombre: 'Auriculares', precio: 200 },
+			{ nombre: 'Teclado', precio: 50, descuento: true }
+		]
+
+		for (let i = 0; i < carrito.length; i++) {
+			if (carrito[i].descuento === true) {
+				console.log(`El articulo ${carrito[i].nombre} Tiene descuento... `);
+				continue;
+			}
+			console.log(carrito[i].nombre);
+		}
+
+		//  Y en que casos puedes utilizar el break?
+		const actividad = [
+			{ diaSemana: 'Lunes', pasos: 8000 },
+			{ diaSemana: 'Martes', pasos: 10000 },
+			{ diaSemana: 'Miércoles', pasos: 7500 },
+			{ diaSemana: 'Jueves', pasos: 3500 },
+			{ diaSemana: 'Viernes', pasos: 20000 },
+			{ diaSemana: 'Sábado', pasos: 1000 },
+			{ diaSemana: 'Domingo', pasos: 800 }
+		];
+
+		// Deseamos comprobar si el usuario ha llegado a 25000 pasos semanales
+		// Si ha llegado, mostraremos un mensaje 'Objetivo de 25000 pasos conseguido'
+		// y nos saldremos del bucle porque no hará falta comprobar más
+		let pasos = 0;
+
+		for (let i = 0; i < actividad.length; i++) {
+			pasos += actividad[i].pasos;
+            console.log(actividad[i].diaSemana);
+			if (pasos >= 25000) {
+				alert('Objetivo de 25000 pasos conseguido');
+				break;
+			}
+		}
+
+		console.log(pasos);
+	</script>
+</body>
+
+</html>

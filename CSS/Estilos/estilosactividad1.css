@@ -1,0 +1,25 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#first{
+    font-size: xx-large;
+    text-decoration: underline;
+}
+
+.second{
+    font-weight: bold;
+    color: aquamarine;
+}
+
+a{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a:link{
+    font-weight: bold;
+}
+
+a:visited{
+    color: black;
+}

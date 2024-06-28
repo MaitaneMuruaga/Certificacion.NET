@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de objetos</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		const producto = {
+			nombre: 'Monitor 20 pulgadas',
+			precio: 30,
+			disponible: true
+		}
+
+		// Veamos como acceder a las propiedades de un objeto:
+		// Supongamos que deseamos acceder al nombre. En los objetos de JavaScript existe algo llamado la sintaxis de punto
+		// Esta sintaxis nos permite acceder a las propiedades del objeto
+		console.log(producto.nombre);
+		console.log(producto.precio);
+		console.log(producto.disponible);
+
+		// Esta es otra forma aunque no tan común
+		console.log(producto['nombre']);
+
+		// Para añadir nuevas propiedades se utiliza de la misma forma la sintaxis de punto
+		producto.imagen = 'image.jpg';
+
+		// Finalmente, para eliminar una propiedad se utiliza delete
+		delete producto.nombre;
+
+		console.log(producto);
+
+		// Un objeto puede contener cualquier tipo de dato dentro de el, incluso puede tener otros objetos:, esto se le conoce como objetos anidados.
+		const cliente = {
+			nombre: 'Francisco',
+			apellido: 'Gil',
+			moroso: false,
+			direccion: {
+				calle: 'Gran vía 8',
+				localidad: 'Madrid'
+			}
+		}
+
+		console.log(cliente); // Puedes ver que tenemos un objeto dentro de un objeto.
+
+		console.log(cliente.nombre);
+		console.log(cliente.direccion.calle);
+	</script>
+</body>
+
+</html>

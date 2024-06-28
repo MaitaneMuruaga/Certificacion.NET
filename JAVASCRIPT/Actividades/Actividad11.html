@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 11</title>
+
+    </head>
+
+    <body>
+        <script>
+            //PARTE 1
+            //Se nos pedirá un número en pantalla entre el 1 y el 10 mediante un cuadro de diálogo.
+            //En el caso de que el número sea  correcto aparecerá en pantalla desarrollada su tabla de multiplicar.
+            //Para sacar la tabla de multiplicar utilizará console.log. Por cada iteración sacar el resultado con esta especificación
+            //, por ejemplo, para la tabla del 5 en la primera iteración: 5 x 1 =5.
+            //Para generar esta tabla de multiplicar se  usará el bloque for.    
+            const unNumero = Number(prompt('porfa entre un Numero 1 y 10'))
+            if(unNumero>=1 && unNumero<=10) {
+                console.log(typeof unNumero)
+                for (let i=0; i<=10; i++){
+                    let MULT = unNumero*i
+                    console.log(`${unNumero} x ${i} = ${MULT}`);
+                } 
+            } else{
+                alert('Número incorrecto')
+            }
+
+            
+            //PARTE 2
+            //Repetir la parte 1 con el bloque while y el do while.
+            let preguntaNumero;
+            let valido =false;
+            do{
+                preguntaNumero = prompt("Introduce un numero");
+                if (isNaN(preguntaNumero)){
+                    alert('Introduce un número');
+                    valido=false;
+                } else if (preguntaNumero<1 || preguntaNumero>10){
+                    lert('Número fuera de rango');
+                    valido=false;
+                } else{
+                    valido=true;
+                }
+            } while (valido==false)
+
+            let contador=1;
+            while(contador <= 10){
+            console.log(`${preguntaNumero} x ${contador} = ${preguntaNumero*contador}`);
+            contador++;
+            }
+
+            //PARTE 3
+            //Crear un array con 5 números.
+            const numeros = new Array(10, 20, 30, 40, 50);
+            
+            //Iterarlo mediante el bloque for of y por cada uno sacar por pantalla el doble de su valor. 
+            for (let x of numeros) {
+            // console.log("Numero " + x + " su doble es " + (x * 2));
+            console.log("Numero ", x , " su doble es ", (x * 2));
+            }
+            
+               
+        </script>
+    
+    </body>
+
+</html>

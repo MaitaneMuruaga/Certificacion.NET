@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 4</title>
+
+    </head>
+
+    <body>
+        <script>
+            // PARTE 1. Crea una variable con tu nombre y otra con tu apellido
+            const nombre = 'Maitane';
+            const apellido = 'Muruaga';
+
+            // Sacar por consola tu nombre y apellidos concatenados de manera: "Tu nombre es (nombre) y te apellidas (apellido)"
+            console.log(`Mi nombe es ${nombre} y mi apellido es ${apellido}`);
+
+            // Crear una variable cuyo valor sea el resultado de un método que devuelva si tu nombre tiene una letra a.
+            console.log(nombre.indexOf('a'));
+
+            // Sacar por consola el consola el contenido de esta variable. Deberá salir true si tu nombre tiene a y false si no lo tiene.
+            console.log(nombre.includes('a'));
+
+            
+            
+            //PARTE 2. Crear una variable con tu localidad de residencia con espacios a la izquierda y a la derecha. 
+            const localidad = '       Mungia      ' 
+
+            //Crear una variable cuyo valor sea la variable anterior sin espacios utilizando funciones string.
+            console.log(localidad.trimStart().trimEnd());
+
+            // Crear una variable cuyo valor sea la primera letra de la localidad asignando el valor mediante variables.
+            console.log(localidad.charAt(0));
+
+
+            
+            // PARTE 3. Crear una variable con tu email
+            const email = 'maitxu189@hotmail.es'
+
+            //Crear una variable cuyo valor sea tu email convertido a mayúsculas utilizando la variable anterior. 
+            console.log(email.toUpperCase());
+
+            // Crear una variable cuyo valor sea tu email separado por el carácter @ utilizando la primera variable. 
+            console.log(email.split('@'));
+
+        </script>
+    
+    </body>
+
+</html>

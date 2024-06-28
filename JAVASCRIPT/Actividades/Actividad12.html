@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 12</title>
+</head>
+<body>
+    <script>
+        //PARTE 1
+        //Crear un script integrado en la sección body del documento con la siguiente especificación:
+        //Crear un array de 6 personas. Cada persona tendrá un nombre, una localidad y un sueldo.
+        const empleados = [
+			{ nombre: 'Ane', localidad: 'Gatika', salario: 2500 },
+			{ nombre: 'Iratxe', localidad: 'Mungia', salario: 1800 },
+			{ nombre: 'Antxon', localidad: 'Bilbao', salario: 1500 },
+			{ nombre: 'Ainhoa', localidad: 'Gatika', salario: 2000 },
+			{ nombre: 'Maria', lodcalidad: 'Derio', salario: 1200 },
+			{ nombre: 'Nerea', localidad: 'Izarra', salario: 1000 }
+		]
+
+        console.log(empleados);
+
+        //Mediante el método map, crear un array nuevo con los nombres de las personas, su sueldo y su retención. Esta será el 15% del sueldo.
+        const nuevosEmpleados = empleados.map(nombre => ({
+			nombre: nombre.nombre, localidad: nombre.localidad, salario: nombre.salario,  retencion: nombre.salario * .15
+		}));
+
+        console.log(nuevosEmpleados);
+
+        //PARTE 2
+        //Utilizar los métodos de arrays para efectuar las siguientes operaciones:
+        //Devolver la posición que ocupa una persona con un nombre determinado.
+        const indice = empleados.findIndex(nombre => nombre === 'Antxon'); // Buscando Agosto devolvería -1
+		console.log(indice);
+
+        //Saber si existe alguna persona con el sueldo mayor que 3500.
+        const salario = empleados.findIndex(salario => salario === '3500'); // Buscando Agosto devolvería -1
+		console.log(salario);
+
+        if (salario === -1) {
+			console.log('No hay ningún empleado con un seldo mayor que 3500');
+		} else {
+			console.log(salario);
+		}
+
+        //Filtrar todas las personas de una determinada localidad.
+        
+
+
+
+        //Filtrar todas las personas de una determinada localidad con un sueldo mayor que 2000.
+        //Encontrar la primera persona de una determinada localidad.
+
+    </script>
+
+</body>
+</html>

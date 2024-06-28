@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Métodos de strings</title>
+    <meta charset="UTF-8" />
+    <script>
+        // Veamos algunos métodos existentes en los strings o cadenas de Texto:
+        const producto = 'Monitor 20 Pulgadas';
+        const precio = '30 €';
+
+        console.log(producto.length); // Conocer la longitud de una cadena, length es de los muy pocos métodos que no usan () y es más que nada porque no es un método como tal sino una propiedad.
+
+        // IndexOf
+        console.log(producto.indexOf('Pulgadas')) // Nos dirá que posición tiene el texto en caso de encontrarlo
+        console.log(producto.indexOf('Tablet')); // -1 Significa que no lo pudo encontrar
+
+        // Includes
+        console.log(producto.includes('Monitor')); // Devuelve true
+        console.log(producto.includes('monitor')); // Devuelve false
+
+        // Veamos como concatenar o unir 2 strings:
+        console.log(producto.concat(precio)); // Concatenar una variable
+
+        // Otras formas de concatenar:
+        console.log(producto + precio);
+        console.log('El Producto ' + producto + ' tiene un precio de ' + precio);
+
+        // ES6 trajo consigo una mejor forma de concatenar variables que es con algo llamado Template String
+        console.log(`El Producto ${producto} tiene un precio de ${precio}`);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

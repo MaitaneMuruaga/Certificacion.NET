@@ -1,0 +1,36 @@
+/* Cambios en el nav */
+.active{
+    font-weight: bold;
+}
+
+/* Cambios en el primer y segundo bloque */
+.display-2{
+    font-size: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+p{
+    padding-left: 10px;
+}
+
+.button-second-paragraph{
+    padding-left: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Cambios en el carousel */
+#carouselExample{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+/* Cambios en el footer */
+footer{
+    margin-top: 10px;
+}

@@ -1,0 +1,12 @@
+h1{
+    border: 10px solid blue;
+}
+
+.one{
+    margin: 0 50px 0 70px;
+}
+
+span{
+    padding: 5px;
+    border: 1px solid red;
+}

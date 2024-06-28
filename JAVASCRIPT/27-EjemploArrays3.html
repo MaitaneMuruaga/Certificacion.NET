@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de arrays</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		const nombres = ['Pedro', 'Ana', 'Juan', 'Marta', 'Susana', 'Juan Luis'];
+		// Array Destructuring - Al igual que los objetos, los arrays se pueden desestructurar. Veamos algunos ejemplos:
+		//const [primero] = nombres; // Tendríamos una variable primero con el valor del primer elemento
+		const [primero, segundo] = nombres;  // Tendríamos dos variables primero y segundo con el valor del primer elemento
+		const [, , tercero] = nombres; // Tendríamos una variable tercero con el valor del tercer elemento. Las comas entre vacíos prescinden de esos elementos
+
+		// console.log(numeros);
+		console.log(primero);
+		console.log(segundo);
+		console.log(tercero);
+	</script>
+</body>
+
+</html>

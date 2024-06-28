@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css"/>
+</head>
+
+<body>
+    
+    <h1>Impresión online</h1>
+    
+    <nav>
+        <ul>
+            <li>
+                <a href="./Index.html" aria-label="Página de inicio">¿Quienes somos?</a>
+            </li>
+            <li>
+                <a href="./Productos.html" aria-label="Ir a la página de productos">Vea nuestros productos</a>
+            </li>
+            <li>
+                <a href="./Contacto.html" aria-label="Ir a la página de contacto">Zona miembros</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+
+        <h2>Página en construcción</h2>
+        <p>Para más información llámenos al teléfono <strong>888-999-777</strong> y le atenderemos gustosamente. Nuestros teléfonos de contacto por provincias son estos:</p>
+    
+        <table aria-label="Teléfonos de contacto" border="1">
+            <tr>
+                <th scope="col">Provincia</th>
+                <th scope="col">Teléfono</th>
+            </tr>
+
+            <tr>
+                <td scope="row">Navarra</td>
+                <td>948 - 88 77 66</td>
+            </tr>
+
+            <tr>
+                <td scope="row">Guipúzcoa</td>
+                <td>943 - 99 99 66</td>
+            </tr>
+
+            <tr>
+                <td scope="col">Álava</td>
+                <td>945 - 44 99 33</td>
+            </tr>
+
+        </table>
+
+        <h2 class="contact">Contacto</h2>
+    
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="usuario_nombre" aria-describedby="ayuda" required
+                placeholder="Nombre (obligatorio)">
+            <br/>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="usuario_email" required placeholder="Email (obligatorio)">
+            <br/>
+
+            <label for="texto">Texto:</label>
+            <textarea id="texto" name="usuario_texto"></textarea>
+            <br/>
+            <button type="submit">Enviar</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; Página web desarrollada en abril del año 2023</p>
+    </footer>
+
+</body>
+
+</html>

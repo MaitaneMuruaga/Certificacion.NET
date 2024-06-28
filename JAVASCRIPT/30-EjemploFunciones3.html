@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de funciones</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Ejemplo más avanzado. Una función puede devolver un resultado cuando se ejecuta
+		// return devuelve el valor que la función calcula.
+		let total = 0;
+
+		// Esta función suma un precio al total y devuelve su valor.
+		function agregarCarrito(precio) {
+			return total + precio;
+		}
+
+		// Esta función calcula el total+IVA y lo devuelve.
+		function calcularTotalIVA(total) {
+			return 1.21 * total;
+		}
+
+		// Gracias a la función agregarCarrito podemos actualizar el total cuando queramos
+		total = agregarCarrito(200);
+		total = agregarCarrito(300);
+		total = agregarCarrito(400);
+		console.log(total);
+
+		// Gracias a la función calcularTotalIVA podemos calcular el IVA cuando queramos
+		const totalPagar = calcularTotalIVA(total);
+		console.log(`El total a pagar es de ${totalPagar}`);
+
+		const sumaDosNumeros = (num1, num2) => {
+			return num1 + num2;
+		};
+		const suma = sumaDosNumeros(1, 2);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejemplo de uso de objetos</title>
+    <meta charset="UTF-8" />
+    <script>
+        //P1
+        //Crear un objeto llamado empleado con el nombre, el sueldo, el cargo y el departamento.
+
+        const empleado = {
+            nombre: 'PePe',
+            sueldo: 5,
+            cargo: 'programador',
+            departamento: 'i+d'
+        }
+        //• Cambiarle el nombre.
+        empleado.nombre = 'Iker'
+        
+        //Agregar al empleado su localidad.
+        empleado.localidad = 'Ajangiz';
+        
+        //Eliminar al empleado el cargo.
+        delete empleado.cargo;
+        
+        //Sacar por consola el empleado y comprobar si todo está bien.
+        console.log(empleado)
+
+        
+        //P2
+        //Mediante la sintaxis del punto, crear una variable con el nombre del empleado.
+        const nombreEmpleado = empleado.nombre;
+       
+        //Mediante la desestructuración, crear dos variables con la localidad y el departamento
+        const { localidad, departamento } = empleado;
+       
+        //Sacar por consola las variables creadas y comprobar si todo está bien.
+        console.log(nombreEmpleado);
+        console.log(localidad);
+        console.log(departamento);
+       
+        
+        //P3
+        // Crear un clon del empleado
+        const empleadoClon = { ...empleado };
+        
+        //Cambiar al empleado original el nombre.
+        empleado.nombre = 'PePe'
+       
+        //Sacar por consola los dos objetos y comprobar que ambos tienen el nombre diferente.
+        console.log(empleado);
+        console.log(empleadoClon);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

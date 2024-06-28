@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso del bloque switch</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// Cuando tienes múltiples condiciones por revisar, una forma fácil de leerlo es con un switch...
+		// Los Switch también pueden ejecutar funciones, no solamente console.logs o alerts
+		const puesto = prompt('Introduce puesto en carrera');
+		switch (puesto) {
+			//case '1' || '2' || '3':
+            case '1':
+			case '2':
+			case '3':
+				alert('Tienes medalla');
+				break; // break se sale del switch. Hay que hacerlo para continuar con la ejecución
+			case '4':
+			case '5':
+				alert('No tienes medalla');
+				break;
+			default:
+				alert('Puesto erróneo');
+		}
+
+		switch (puesto) {
+			case '1':
+				alert('oro');
+				break;
+			case '2':
+				alert('plata');
+				break;
+			case '3':
+				alert('bronce');
+				break;
+			case '4':
+			case '5':
+				alert('No tienes medalla');
+				break;
+			default:
+				alert('Puesto erróneo');
+		}
+
+		let rol = prompt('Introduce tu rol');
+		rol = rol.toUpperCase();
+		// if vs switch
+
+		// if (rol === 'ADMIN') {
+		// 	console.log('El Usuario puede editar, eliminar y ver toda la información');
+		// } else if (rol === 'EDITOR') {
+		// 	console.log('El usuario solo puede editar sus registros');
+		// } else if (rol === 'USUARIO') {
+		// 	console.log('El Usuario es visitante, solo puede ver la información');
+		// } else {
+		// 	console.log('Rol incorrecto');
+		// }
+
+		switch (rol) {
+			case 'ADMIN':
+				console.log('El Usuario puede editar, eliminar y ver toda la información');
+				break;
+			case 'EDITOR':
+				console.log('El usuario solo puede editar sus registros');
+				break;
+			case 'USUARIO':
+				console.log('El Usuario es visitante, solo puede ver la información');
+				break;
+			default:
+				alert('Rol incorrecto');
+		}
+
+		let numero = prompt('Introduce número');
+		// if (numero < 0) {
+		// 	console.log('Negativo');
+		// } else {
+		// 	console.log('Positivo');
+		// }
+
+		switch (numero < 0) {
+			case true:
+				console.log('Negativo');
+				break;
+			default:
+				console.log('Positivo');
+		}
+
+	</script>
+</body>
+
+</html>

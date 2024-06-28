@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad meal Daniel</title>
+</head>
+<body>
+        <h1>Busqueda por paises con pestaña desplegable.</h1>
+        <form>
+            <label for="pais" class="sr-only my-2">País</label>
+            <select name="pais" id="pais" required>
+                <option value="">Selecciona un país</option>
+            </select>
+            <button id="cargarAPI" type="submit">
+                Ver comidas
+            </button>
+        </form>
+        <div id="contenido"></div>
+    
+        <script>
+            const formulario = document.querySelector('form');
+            const selectPais = document.querySelector('#pais');
+    
+            // Función para cargar los países en el desplegable
+            const cargarPaises = async () => {
+                try {
+                    const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
+                    const resultado = await respuesta.json();
+                    const paises = resultado.meals;
+                    paises.forEach(pais => {
+                        const option = document.createElement('option');
+                        option.value = pais.strArea;
+                        option.textContent = pais.strArea;
+                        selectPais.appendChild(option);
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+    
+            // Función asincrónica para obtener los datos de la API
+            const obtenerDatosAPI = async (e) => {
+                e.preventDefault(); // Evita el envío del formulario
+                try {
+                    const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=' + selectPais.value;
+                    const respuesta = await fetch(url);
+                    const resultado = await respuesta.json(); 
+                    console.log(resultado.meals);
+                    mostrarHTMLAPI(resultado.meals); 
+                } catch (error) {
+                    console.log(error); 
+                }
+            }
+
+            const mostrarHTMLAPI = (datos) => {
+                const contenido = document.querySelector('#contenido');
+                if (datos === null) {
+                    contenido.innerHTML = 'No hay comidas de ' + selectPais.value;
+                    return;
+                }
+                let html = '';
+                datos.forEach(receta => {
+                    const { strMeal, strMealThumb } = receta;
+                    html += `
+                        <div class="meal-item">
+                            <p><strong>Receta:</strong> ${strMeal}</p>
+                            <img src="${strMealThumb}" alt="comida" width="450">
+                            <small>${idMeal}</small>
+                        </div>
+                    `;
+                });
+                contenido.innerHTML = html; 
+            }
+
+            formulario.addEventListener('submit', obtenerDatosAPI);
+
+            document.addEventListener('DOMContentLoaded', cargarPaises);
+        </script>
+</body>
+</html>

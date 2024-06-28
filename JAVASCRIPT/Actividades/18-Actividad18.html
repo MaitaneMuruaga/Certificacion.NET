@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 18</title>
+</head>
+
+<body>
+    <!-- Tenemos primero una simple estructura de HTML -->
+    <h1>Actividad 18</h1>
+    <!-- Botón para acargar la API -->
+    <form>
+        <label for="tipo" class="sr-only my-2">Selecciona una categoria</label>
+         
+        <select id="tipo">
+        </select>
+
+        <button id="cargarAPI" type="submit">
+            Ver chiste
+        </button>
+    </form>
+    <div id="contenido"></div>
+
+    <script>
+        const formulario = document.querySelector('form');
+        const inputTipo = document.querySelector('#tipo');
+
+        // Función para obtener la lista de categorias y llenar el select
+        const obtenerCategoria = async () => {
+            try {
+                const respuesta2 = await fetch('https://api.chucknorris.io/jokes/categories');
+                const categorias = await respuesta2.json();
+                categorias.forEach(categoria => {
+                    const option = document.createElement('option');
+                    option.value = categoria;
+                    option.textContent = categoria;
+                    tipo.appendChild(option);
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        const obtenerDatosAPI = async (e) => {
+            e.preventDefault();
+            try {
+                const url = 'https://api.chucknorris.io/jokes/random?category=' + inputTipo.value.trim();
+                const respuesta = await fetch(url);
+                const resultado = await respuesta.json();
+                mostrarHTMLAPI(resultado);
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        const mostrarHTMLAPI = (datos) => {
+            const contenido = document.querySelector('#contenido')
+            if (datos === null) {
+                contenido.innerHTML = 'No hay cócteles de ' + inputTipo.value.trim();
+            }
+            let html = `<p>${datos.value}</p>
+            <a href="${datos.url}">Enlace a chiste</a>
+            `;
+           
+            contenido.innerHTML = html;
+        }
+
+        formulario.addEventListener('submit', obtenerDatosAPI);
+        document.addEventListener('DOMContentLoaded', obtenerCategoria);
+    </script>
+</body>
+
+</html>

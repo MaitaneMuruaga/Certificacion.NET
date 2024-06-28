@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Try Catch</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>Día de la semana</h1>
+    <input type="text" id="dia" />
+    <button type="button" id="btnDiaSemana">Introduce un número del 1 al 7</button>
+
+    <h1>Confirmar contraseñas</h1>
+    <span>Introduce contaseña</span><input type="password" id="pass1" />
+    <span>Confirma contaseña</span><input type="password" id="pass2" />
+    <button type="button" id="btnConfirmar">Confirmar contraseña</button>
+    <script>
+        // Cuando JavaScript detecta un error, deja de ejecutarse.
+        // El bloque try/catch nos permite gestionar posibles situaciones críticas para que nuestros programas no se detengan si hay errores.
+        // console.log(1 + 1);
+        // hola(); // Error porque no la función hola no existe
+        // console.log(2 + 2); // Esto no se muestra porque el script se ha detenido en la línea anterior
+
+        console.log(1 + 1);
+        // El script intenta ejecutar lo que hay dentro de try. Si hay algún error, reacciona con lo que el bloque catch tiene dentro sin que el script se detenga por el error
+        try {
+            hola();
+        } catch (error) { // error es un alias, puede llamarse como uno desee
+            console.log(error);
+        }
+        console.log(2 + 2); // Esto sí se muestra porque la línea de error la hemos gestionado con el try
+
+        // No hay que utilizar try/catch de forma indiscriminada. Se suele utilizar cuando operaciones externas a nuestro script que desde aquí no se pueden controlar
+        // sean necesarias para que la ejecución pueda continuar. Por ejemplo, conectarnos a una base de datos, autenticarnos, agregar un producto a una tabla de una base de datos...
+        const btnDiaSemana = document.querySelector('#btnDiaSemana');
+        const btnConfirmar = document.querySelector('#btnConfirmar');
+  
+
+        const diaSemana = () => {
+            const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            let dia = parseInt(document.querySelector('#dia').value);
+            try {
+                // Se hace una relación de errores posibles del usuario.
+                // A cada uno se le da un mensaje
+                if (dia === '') {
+                    throw 'Dato vacío';
+                }
+                if (isNaN(dia)) {
+                    throw 'Dato no numérico';
+                }
+                if (dia < 1 || dia > 7) {
+                    throw 'Número fuera de rango';
+                }
+                // Aquí acaba la relación. Se hacen las operaciones pertinentes
+                dia--;
+                alert(dias[dia]);
+            }
+            catch (err) {
+                // err recoge el mensaje de error y lo muestra
+                alert(err);
+            }
+            finally { // Opcional
+                // Pase lo que pase se ejecuta
+                alert('Operación finalizada');
+            }
+        }
+
+        const confirmarPasswords = () => {
+            const pass1 = document.querySelector('#pass1').value;
+            const pass2 = document.querySelector('#pass2').value;
+            try {
+                if (pass1 === '' || pass2 === '') {
+                    throw 'Debes introducir la contraseña y su confirmación';
+                }
+                if (pass1 !== pass2) {
+                    throw 'Las contraseñas no coinciden';
+                }
+                alert('Correcto!!!');
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+        
+        btnDiaSemana.addEventListener('click', diaSemana);
+        btnConfirmar.addEventListener('click', confirmarPasswords);
+    </script>
+</body>
+
+</html>

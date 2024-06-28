@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <!-- Tenemos primero una simple estructura de HTML -->
+    <h1>Actividad 16</h1>
+    <!-- Botón par acargar la API -->
+    <button type="button" id="cargarAPI">
+        Cargar API
+    </button>
+    <div id="contenido"></div>
+
+    <script>
+        const btncargarAPI = document.querySelector ('#cargarAPI');
+        const obtenerDatosAPI = async () => {
+            try {
+                const respuesta = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
+                const resultado = await respuesta.json();
+                console.log(resultado.drinks);
+                mostrarHTMLAPI(resultado.drinks);
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        const mostrarHTMLAPI = (datos) => {
+            const contenido = document.querySelector ('#contenido')
+            let html = '';
+            datos.forEach(bebida => {
+                const { strDrink, strInstructions, strDrinkThumb } = bebida;
+                html += `
+                    <p>Bebida: ${strDrink} </p>
+                    <p>Preparación: ${strInstructions} </p>
+                    <img src="${strDrinkThumb}" alt="bebida"> 
+                `
+            });
+            contenido.innerHTML = html;
+        
+        }
+
+        btncargarAPI.addEventListener('click', obtenerDatosAPI);
+    </script>
+</body>
+
+</html>

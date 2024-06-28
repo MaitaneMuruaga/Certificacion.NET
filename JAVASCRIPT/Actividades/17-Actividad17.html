@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+
+<body>
+    <h1>Actividad 17</h1>
+
+    <form>
+        <label for="tipo" class="sr-only my-2">Zona geográfica</label>
+        <input type="text" placeholder="Introduce zona" name="zona" id="zona" required autofocus />
+        <button id="cargarAPI" type="submit">
+            Ver recetas
+        </button>
+    </form>
+    <div id="contenido"></div>
+
+    <script>
+        const formulario = document.querySelector('form');
+        const inputZona = document.querySelector('#zona');
+        const obtenerDatosAPI = async (e) => {
+            e.preventDefault();
+            try {
+                const url='https://www.themealdb.com/api/json/v1/1/filter.php?a=' + inputZona.value.trim();
+                const respuesta = await fetch(url);
+                const resultado = await respuesta.json();
+                console.log(resultado.meals);
+                mostrarHTMLAPI(resultado.meals);
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        const mostrarHTMLAPI = (datos) => {
+            const contenido = document.querySelector('#contenido')
+            if (datos===null){
+                contenido.innerHTML='No hay recetas de ' + inputZona.value.trim();
+            }
+            let html = '';
+            datos.forEach(receta => {
+                const { strMeal, strMealThumb, idMeal } = receta;
+                html += `
+                    <h2>Receta: ${strMeal} </h2>
+                    <img src="${strMealThumb}" alt="receta">
+                    <small>${idMeal}</small>
+                `
+            });
+            contenido.innerHTML = html;
+        }
+
+        formulario.addEventListener('submit', obtenerDatosAPI);
+    </script>
+</body>
+
+</html>

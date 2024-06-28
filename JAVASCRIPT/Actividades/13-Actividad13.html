@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 13 - Página Daniel</title>
+    <style>
+        .negrita {
+            font-weight: bold;
+        }
+        .grande {
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo-principal">Actividad 13 JS</h1>
+    <p>Este es un párrafo de ejemplo para la actividad 13.</p>
+    <img id="imagen-ejemplo" src="https://www.javilazaro.es/wp-content/uploads/2019/02/Javascript-logo-basico-946x1024.png" alt="Imagen de ejemplo">
+    <h2 id="subtitulo">Lista de ejemplo para la actividad.</h2>
+    <ol id="lista-numerada">
+        <li>Primer punto de la lista</li>
+        <li>Segundo punto de la lista</li>
+        <li>Tercer punto de la lista</li>
+    </ol>
+
+    <script>
+        // Parte 1: Capturar y cambiar contenido
+        document.getElementById("titulo-principal").textContent = "Título Modificado";
+        document.getElementById("subtitulo").textContent = "Subtítulo Modificado";
+        document.getElementById("imagen-ejemplo").src = "https://th.bing.com/th/id/R.872288fae16a267e192d61e281cf283e?rik=%2f54bEWqULSypcA&pid=ImgRaw&r=0";
+
+        // Parte 2: Aplicar estilos
+        var lista = document.getElementById("lista-numerada");
+        lista.classList.add("negrita");
+        var imagen = document.getElementById("imagen-ejemplo");
+        imagen.classList.add("grande");
+
+        // Parte 3: Agregar un enlace y
+        // eliminar último elemento de la lista
+        const enlace = document.createElement('a');
+        enlace.textContent='Ir a web wikipedia de Queen';
+        enlace.href = 'https://es.wikipedia.org/wiki/Queen';
+        enlace.target = '_blank';
+        document.body.appendChild(enlace);
+
+        lista.removeChild(lista.lastElementChild);
+    </script>
+
+    <a href="https://openai.com/about/" target="_blank">Visita Pagina Principal OpenAi</a>
+</body>
+</html>

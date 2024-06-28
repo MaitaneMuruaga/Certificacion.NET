@@ -1,0 +1,48 @@
+<!-- PRIMERA PARTE
+•	Incluir en la tabla la etiqueta aria-label con el texto “Contenidos del curso”.
+•	La tabla tendrá en la primera fila las casillas: Módulo, Objetivo, Horas.
+•	La tabla tendrá en la segunda fila las casillas: HTML5, Construir contenidos en una página web, 40.
+•	La tabla tendrá en la tercera fila las casillas: CSS, Maquetar y dar estilo a una página web, 30.
+•	Incluir el atributo scope en las casillas que son títulos de fila y columna con el valor adecuado.
+SEGUNDA PARTE
+•	Incluir una fila más en la tabla con las casillas: Total de horas (ocupará dos casillas), 70. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 6</title>
+</head>
+
+<body>
+    
+    <table aria-label="Contenidos del curso" border="1">
+        
+        <tr>
+            <th scope="col">Módulo</th>
+            <th scope="col">Objetivos</th>
+            <th scope="col">Horas</th>
+        </tr>
+
+        <tr>
+            <th scope="row">HTML</th>
+            <td>Construir contenidos en una página web</td>
+            <td>40</td>
+        </tr>
+
+        <tr>
+            <th scope="row">CSS</th>
+            <td>Maquetar y dar estilo a una página web</td>
+            <td>30</td>
+        </tr>
+
+        <tr>
+            <th scope="row" colspan="2">Total de horas</th>
+            <td>70</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

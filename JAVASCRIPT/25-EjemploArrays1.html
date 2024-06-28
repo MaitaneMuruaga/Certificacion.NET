@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de arrays</title>
+	<meta charset="UTF-8" />
+
+</head>
+
+<body>
+	<script>
+		// Al igual que los objetos los arrays forman una parte muy importante en cualquier lenguaje de programación
+		// Un ejemplo de un array es un carrito de compra. Sirve para agrupar elementos del mismo tipo.
+		// También la forma en que una red social muestra un listado de amigos o personas que le dieron Me Gusta a tu última foto, seguramente es un array.
+
+		// Veamos primero como crear un array
+		const numeros = [10, 20, 30, 40, 50];
+		// const numeros2 = new Array(10, 20, 30, 40, 50);
+		console.log(numeros);
+
+		// En JavaScript cuando veas esos corchetes estarás ante un array. La sintaxis de declaración de objetos es diferente, utilizamos las llaves
+
+		// El array anterior fue de números, también puedes crear uno de Strings u objetos por ejemplo y se puede crear utilizando la palabra new
+		const nombres = new Array('Pedro', 'Ana', 'Juan', 'Marta', 'Susana', 'Juan Luis');
+		console.log(nombres);
+
+		// Veamos como acceder a los elementos de un array
+		// La forma en la que accedes a un array es por lo que se conoce como el indice. Los arrays en JavaScript inician en 0
+
+		console.log(numeros[0]);
+		console.log(numeros[1]);
+		console.log(numeros[3]);
+		console.log(numeros[20]); // No existe esta posición, luego devuelve undefined
+
+		// Si quieres saber cuantos elementos hay un array puedes utilizar la propiedad length
+		console.log(nombres.length);
+
+		// Al Igual que los objetos un array se puede modificar a pesar de utilizar la palabra const
+		nombres[0] = 'Marcos';
+		console.log(nombres);
+
+		
+	</script>
+</body>
+
+</html>

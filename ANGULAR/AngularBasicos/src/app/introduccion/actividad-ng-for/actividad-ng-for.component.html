@@ -1,0 +1,11 @@
+<div class="galeria">
+   <div *ngFor="let persona of personas"class="card" style="width: 18rem;">
+        <img src="{{persona.avatar}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{persona.nombre}} {{persona.apellido}}</h5>
+            <p class="card-text">{{persona.ciudad}}</p>
+            <p class="card-text">{{persona.email}}</p>
+            <p class="card-text">{{persona.sueldo}}</p>
+        </div>
+    </div> 
+</div>

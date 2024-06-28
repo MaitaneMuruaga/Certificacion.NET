@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row align-items-start">
+    <!-- Columna izquierda -->
+    <div class="col">
+      <form #formulario="ngForm" (submit)="getPaises()">
+        <div class="form-group">
+            <label for="moneda">Moneda</label>
+            <input type="text" class="form-control" id="moneda" name="moneda" [(ngModel)]="monedaInput"
+            required #moneda="ngModel" />
+            <div *ngIf="moneda.invalid && moneda.touched" class="text-danger">
+              La moneda es obligatoria
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
+              Aceptar
+            </button> 
+        </form>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="col">
+      <div class="row">
+        <p-table [value]="paises"
+          [paginator]="true"
+          [rows]="10"
+          [showCurrentPageReport]="true"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} los países"
+          [rowsPerPageOptions]="[10, 25, 50]">
+          <div class="flex align-items-center justify-content-between">
+            Paises
+            <p-button icon="pi pi-refresh"></p-button>
+          </div>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>País</th>
+              <th>Bandera</th>
+              <th>Capital</th>
+              <th>Población</th>
+              <th>Donde está</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-paises>
+            <tr>
+              <td>{{paises.name.common}}</td>
+              <td><img [src]="paises.flags.png" [alt]="paises.name.common" width="100" class="shadow-4" /></td>
+              <td>{{paises.capital}}</td>
+              <td>{{paises.population | number: '1.0'}}</td>
+              <td><a href="{{paises.maps.googleMaps}}">Ir aquí</a></td>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+              En total hay {{paises ? paises.length : 0 }} paises.
+            </div>
+          </ng-template>
+        </p-table>    
+      </div>   
+    </div>
+  </div>
+</div>

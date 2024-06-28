@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Variables con const</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <p>Ejemplo de variables cuyo valor no cambia con const</p>
+    <script>
+        // Veamos el 3er tipo de formas de crear variables, const
+        // Existen pocas diferencias entre let y const, asi que vamos a verlas:
+        // Primero declaramos una variable con const y vemos que su valor no puede ser reasignado:
+        const producto = 'Monitor 30 Pulgadas';
+        console.log(producto);
+        producto = 'Monitor 23 Pulgadas';
+
+        // Las variables definidas con const deben inicializarse con un valor:
+        const precio;
+        precio = 20;
+        console.log(precio);
+    </script>
+</body>
+
+</html>

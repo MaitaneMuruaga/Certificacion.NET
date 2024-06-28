@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Parte 1
+        const unNumero = Number(prompt('porfa entre un Numero 1 y 10'));
+        if (unNumero>=1 && unNumero<=10){
+            console.log(typeof unNumero)
+            for (let i=1; i<=10; i++){
+                let MULT = unNumero*i;
+                console.log(`${unNumero} x ${i} = ${MULT}`);
+            }
+        } else {
+            alert('Número incorrecto');
+        }
+
+        // Parte 2
+        let preguntaNumero;
+        let valido =false;
+        do{
+            preguntaNumero = prompt("Introduce un numero");
+            if (isNaN(preguntaNumero)){
+                alert('Introduce un número');
+                valido=false;
+            } else if (preguntaNumero<1 || preguntaNumero>10){
+                alert('Número fuera de rango');
+                valido=false;
+            } else{
+                valido=true;
+            }
+        } while (valido===false)
+
+        let contador=1;
+        while(contador <= 10){
+            console.log(`${preguntaNumero} x ${contador} = ${preguntaNumero*contador}`);
+            contador++;
+        }
+       
+        // Parte 3  Array de 5 números
+        console.log("HACIENDOLO CON <<<<<   FOR OF  >>>>>");
+        const numeros = new Array(10, 20, 30, 40, 50);
+
+        for (let x of numeros) {
+            // console.log("Numero " + x + " su doble es " + (x * 2));
+            console.log("Numero ", x , " su doble es ", (x * 2));
+        }
+    </script>
+</body>
+</html>

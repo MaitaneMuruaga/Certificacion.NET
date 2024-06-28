@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Ejemplo de uso de operadores lógicos</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script>
+		// El operador && permite evaluar varias condiciones. Para que esta evaluación devuelva true todas las condiciones deben ser ciertas
+		const numero = Number(prompt('Introduce número'));
+		if (numero % 3 === 0 && numero % 2 === 0) {
+			alert('El número es divisible por 6');
+		} else {
+			alert('El número no es divisible por 6');
+		}
+
+		// El operador || permite evaluar varias condiciones. Para que esta evaluación devuelva true una de las condiciones debe ser cierta
+		const letra = prompt('Introduce letra');
+		if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+			alert('El carácter es una vocal');
+		} else {
+			alert('El carácter no es una vocal');
+		}
+	</script>
+</body>
+
+</html>

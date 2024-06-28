@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividad 5</title>
+
+    </head>
+
+    <body>
+        <script>
+            //PARTE 1. Crear un objeto llamado empleado con el nombre, el sueldo, el cargo y el departamento. 
+            const empleado = {
+                nombre: 'Nerea',
+                sueldo: '2000 €',
+                cargo: 'desarrolladora web', 
+                departamento: 'Informática', 
+            }
+
+            //Cambiarle el nombre.
+            empleado.nombre = 'Iraia';
+
+            // Agregar al empleado su localidad.
+            empleado.localidad = 'Barakaldo';
+
+            // Eliminar el cargo del empleado
+            delete empleado.cargo;
+            console.log(empleado);
+            
+            
+            //PARTE 2. Mediante la sintaxis del punto, crear una variable con el nombre del empleado. 
+            const nombreEmpleado = empleado.nombre;
+
+            //Mediante la desestructuración, crear dos variables con la localidad y el departamento. 
+            const { localidad, departamento} = empleado;
+            console.log(empleado.nombre);
+            console.log(localidad, departamento);
+
+           
+            //PARTE 3. Crear un clon de empleado
+            const empleado2 = {...empleado};
+
+            //Cambiar al empleado oroginal el nombre
+            empleado.nombre = 'Esti';
+            console.log(empleado2);
+            console.log(empleado);
+
+
+
+        </script>
+    
+    </body>
+
+</html>
